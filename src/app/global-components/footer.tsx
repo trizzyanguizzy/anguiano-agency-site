@@ -24,16 +24,16 @@ export const Footer = () => {
   const { downloadURI } = useDownloadFile();
 
   return (
-    <footer className="overflow-visible">
+  <footer id="contact" className="overflow-visible relative pt-10">
       <div className="mx-auto w-full max-w-screen-xl">
-        <div className="md:mb-64 md:px-0 mb-40 flex flex-col items-center px-8">
-          <h2 className="md:text-[5rem] md:px-8 text-[4rem] leading-[1.2] font-semibold my-5 flex justify-center text-center">
-            Have an idea? <br /> {`Let's collaborate.`}
+        <div className="md:mb-56 md:px-0 mb-40 flex flex-col items-center px-8">
+          <h2 className="md:text-[4.6rem] text-[3.8rem] leading-[1.15] font-semibold my-5 flex justify-center text-center bg-hero-title-gradient bg-clip-text text-transparent">
+            Have an idea? <br /> Let&apos;s collaborate.
           </h2>
-          <Link href="mailto:anguiano.dev@gmail.com">
-            <button className="bg-hero-title-gradient text-white py-2 px-4 rounded-xl w-fit inline-text mt-1 text-2xl flex items-center gap-2">
-              {`Contact Me`} <IconArrowRight size={20} />
-            </button>
+          <Link href="mailto:anguiano.dev@gmail.com" className="group">
+            <span className="bg-hero-title-gradient text-white py-2.5 px-6 rounded-xl w-fit inline-flex mt-1 text-2xl items-center gap-2 shadow-lg shadow-pink-600/20 transition-transform group-hover:scale-[1.04] active:scale-95">
+              Contact Me <IconArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </span>
           </Link>
         </div>
         <div className="md:flex-row md:justify-between md:px-0 flex flex-col w-full items-center px-8">
@@ -67,7 +67,7 @@ export const Footer = () => {
               <IconBrandX />
             </a>
           </div>
-          <div className="absolute h-[10rem] blur-[120px] mx-auto w-[70%] bg-[#FD5244] z-[-1] left-0 right-0" />
+      <div className="absolute h-[10rem] blur-[120px] mx-auto w-[70%] bg-hero-title-gradient z-[-1] left-0 right-0 opacity-60" />
         </div>
       </div>
     </footer>

@@ -67,11 +67,6 @@ export const Services = () => {
       className="relative t-[var(--navigation-height)] md:pt-[90px] md:pb-[120px] pt-[80px] pb-[90px] bg-secondary/95 backdrop-blur-sm max-w-[120rem] mx-auto overflow-hidden"
       aria-labelledby="services-heading"
     >
-      {/* soft radial accents */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 -left-16 h-72 w-72 rounded-full bg-primary/20 blur-[120px]" />
-        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-grape/30 blur-[140px]" />
-      </div>
       <div className="relative flex flex-col">
         <div className="mx-auto text-center max-w-4xl px-6">
           <div className="inline-flex items-center gap-2 rounded-xl border border-glass bg-black/60 backdrop-blur px-5 py-1.5 text-2xl font-medium tracking-wide shadow-glass">

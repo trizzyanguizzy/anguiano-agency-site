@@ -1,33 +1,47 @@
 import { useGetProjects } from "../../hooks/queries/useProjects";
 import { ProjectCard } from "./components/project-card";
+import { motion } from "framer-motion";
 
 export const Projects = () => {
   const { projects } = useGetProjects();
   return (
-    <div
+    <section
       id="our-projects"
-      className="t-[var(--navigation-height)] md:pt-[90px] md:pb-[120px] pt-[150px] pb-[90px] relative"
+      aria-labelledby="projects-heading"
+      className="relative t-[var(--navigation-height)] md:pt-[110px] md:pb-[140px] pt-[140px] pb-[100px]"
     >
       <div className="flex flex-col">
-        <div className="md:px-0 w-fit mx-auto text-center px-8">
-          <div className="w-fit mx-auto border border-gray-100 py-[1px] px-[12px] rounded-xl font-medium text-2xl bg-black shadow-lg">
-            Projects
+        <div className="w-fit mx-auto text-center px-8">
+          <div className="inline-flex items-center gap-2 rounded-xl border border-glass bg-black/70 backdrop-blur px-5 py-1.5 text-2xl font-medium tracking-wide shadow-glass">
+            <span className="bg-gradient-to-r from-pixie-powder via-grape to-medium-orchid bg-clip-text text-transparent">
+              Projects
+            </span>
           </div>
-          <h2 className="md:text-[5rem] text-[4rem] leading-[1.2] font-semibold mt-5">
-            What I&apos;ve Built:
+          <h2
+            id="projects-heading"
+            className="md:text-[5rem] text-[3.8rem] leading-[1.15] font-semibold mt-6 bg-hero-title-gradient bg-clip-text text-transparent"
+          >
+            What I&apos;ve Built
           </h2>
-          <p className="text-pText text-3xl mt-2">
+          <p className="text-pText text-2xl md:text-3xl mt-4 font-light">
             Projects that define my experience.
           </p>
         </div>
-        <div className="gap-12 flex-col flex items-center mt-32">
-          {projects.map((project, index) => {
-            return (
-              <ProjectCard key={project.name} {...project} index={index} />
-            );
-          })}
+        <div className="gap-16 flex-col flex items-center mt-28 px-[2.4rem]">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.name}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.7, delay: index * 0.08 }}
+              className="w-full"
+            >
+              <ProjectCard {...project} index={index} />
+            </motion.div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };

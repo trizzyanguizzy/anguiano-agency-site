@@ -12,7 +12,6 @@ export default function Home() {
     <div>
       <main className="overflow-x-hidden">
         <Hero />
-        <ClientLogos />
         <Container className="bg-secondary max-w-none">
           <Services />
         </Container>

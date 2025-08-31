@@ -10,6 +10,7 @@
   html {
     @apply bg-background font-sans text-white;
     font-size: 62.5%;
+  scroll-behavior: smooth;
   }
 }
 
@@ -79,5 +80,13 @@
     position: relative;
     box-shadow: 0 0 1px #b71c1c;
     filter: brightness(110%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *:not(.allow-motion) {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 }

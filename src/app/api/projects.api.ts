@@ -2,6 +2,7 @@ import btDemo1 from "../../../public/btDemo1.png";
 import ciroDemo1 from "../../../public/ciroDemo1.png";
 import fmsDemo1 from "../../../public/fmsDemo1.jpeg";
 import csmDemo1 from "../../../public/csmDemo1.png";
+import hudlDemo from "../../../public/hudlDemo.png";
 import { Project, ProjectNames } from "../utils/types/projects-types";
 
 export default class ProjectsApi {
@@ -44,6 +45,16 @@ export default class ProjectsApi {
           "React Query",
           "Redux",
           "NodeJS",
+        ],
+      },
+      {
+        name: ProjectNames.Hudl,
+        url: "https://www.hudl.com/",
+        img: hudlDemo,
+        description:
+          "A suite of performance analysis tools empowering athletes and coaches with video breakdown, data insights, and collaborative feedback workflows.",
+        skills: [
+"Terraform", "OpsLevel", "snowplow.io", "vite", "vitest", "Redash", "turbo", "turborepo", "pnpm", "Devin AI", "Copilot w/ GPT-5 model", "Storybook", "Chromatic", "React", "TS"
         ],
       },
     ];

@@ -5,6 +5,7 @@ export enum ProjectNames {
   CiroMedSol = "ciro by Medical Solutions",
   FusionMedStaff = "Fusion Medical Staffing",
   CiroShift = "cSM by Medical Solutions",
+  Hudl = "Hudl",
 }
 
 export type Project = {

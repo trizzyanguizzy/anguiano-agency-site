@@ -107,6 +107,14 @@ const config: Config = {
       brightness: {
         servicesBrightness: "110%",
       },
+      keyframes: {
+        marquee: {
+          to: { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 28s linear infinite",
+      },
     },
   },
   plugins: [

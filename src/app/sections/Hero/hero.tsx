@@ -1,9 +1,6 @@
 "use client";
 
 import React from "react";
-import heroSection from "../../../../public/Group-1.png";
-import Image from "next/image";
-import { BackgroundGradient } from "@/app/global-components/background-gradient";
 import { IconArrowRight } from "@tabler/icons-react";
 import { useDownloadFile } from "@/app/hooks/useDownloadFile";
 import { resumeUri } from "@/app/utils/constants";
@@ -21,13 +18,16 @@ const fadeUp = {
   }),
 };
 
-const float = {
-  initial: { y: 0 },
-  animate: {
-    y: [0, -14, 0],
-    transition: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-  },
-};
+// Simple list of core technologies to fill horizontal space now that hero image is removed
+const techBadges = [
+  "TypeScript",
+  "React / Next.js",
+  "Node.js",
+  ".NET",
+  "SQL",
+  "React Native",
+  "Accessibility",
+];
 
 const stats = [
   { label: "Years Experience", value: "5+" },
@@ -39,7 +39,7 @@ export const Hero = () => {
   const { downloadURI } = useDownloadFile();
   return (
     <section
-      className="relative md:mt-56 mt-32 text-center px-4 md:px-8"
+      className="relative text-center px-4 md:px-8 pt-36 md:pt-44 pb-24 md:pb-36 flex items-center"
       aria-labelledby="hero-heading"
     >
       {/* Decorative radial / grid backdrop */}
@@ -52,8 +52,8 @@ export const Hero = () => {
         <div className="absolute inset-0 opacity-[0.06] bg-[repeating-linear-gradient(0deg,rgba(255,255,255,0.12)_0_1px,transparent_1px_60px)]" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl">
-        <div className="md:mb-40 mb-24 relative">
+      <div className="relative mx-auto max-w-6xl w-full">
+        <div className="relative">
           <motion.h1
             id="hero-heading"
             className="font-semibold mt-2 mb-5 flex flex-wrap justify-center gap-x-4 gap-y-2 leading-[1.05] tracking-tight"
@@ -82,6 +82,15 @@ export const Hero = () => {
           >
             I am a front-end focused Full Stack Software Engineer with over 5 years of experience building performant, accessible, design‑driven products that ship real business value.
           </motion.p>
+          {/* Divider */}
+          <motion.div
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{ width: "100%", opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.75 }}
+            className="mx-auto mt-10 h-px max-w-xl bg-gradient-to-r from-transparent via-pixie-powder/60 to-transparent"
+            aria-hidden="true"
+          />
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -111,7 +120,7 @@ export const Hero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 1.1 }}
-            className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-pText/80 text-base md:text-lg"
+            className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 text-pText/80 text-base md:text-lg"
             aria-label="Key statistics"
           >
             {stats.map((s) => (
@@ -128,30 +137,24 @@ export const Hero = () => {
               </li>
             ))}
           </motion.ul>
+          <motion.ul
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 1.3 }}
+            className="mt-14 flex flex-wrap justify-center gap-3 max-w-4xl mx-auto"
+            aria-label="Core technologies"
+          >
+            {techBadges.map((t) => (
+              <li
+                key={t}
+                className="text-sm md:text-base px-4 py-2 rounded-full border border-glass bg-glass/40 backdrop-blur-sm text-pText/90 hover:text-white hover:bg-white/5 transition-colors"
+              >
+                {t}
+              </li>
+            ))}
+          </motion.ul>
         </div>
-        <motion.div
-          variants={float}
-          initial="initial"
-          animate="animate"
-          className="md:mx-0 mx-auto max-w-6xl"
-        >
-          <BackgroundGradient className="md:mx-auto rounded-2xl p-0.5 shadow-lg">
-            <motion.div
-              whileHover={{ scale: 1.015 }}
-              transition={{ type: "spring", stiffness: 200, damping: 18 }}
-              className="rounded-2xl"
-            >
-              <Image
-                src={heroSection}
-                alt="Showcase of recent project work"
-                width={1125}
-                height={709}
-                priority
-                className="rounded-2xl z-[1] p-0.5"
-              />
-            </motion.div>
-          </BackgroundGradient>
-        </motion.div>
       </div>
     </section>
   );
