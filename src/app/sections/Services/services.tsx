@@ -2,6 +2,12 @@ import {
   IconDatabase,
   IconDeviceDesktopCode,
   IconDeviceMobileCode,
+  IconLayersDifference,
+  IconLayersIntersect,
+  IconStack,
+  IconStack2,
+  IconStack3,
+  IconStackMiddle,
   IconUxCircle,
 } from "@tabler/icons-react";
 import React from "react";
@@ -83,18 +89,13 @@ export const Services = () => {
               {/* 4th Section */}
               <div className="flex flex-col w-full items-center">
                 <div className="flex items-center justify-center w-28 h-28 rounded-3xl mb-8 bg-ui-ux-icon">
-                  <IconUxCircle size={40} className="text-ui-ux-text" />
+                  <IconStack2 size={40} className="text-ui-ux-text" />
                 </div>
                 <span className="text-[3rem] mb-3 text-gray-200 text-center">
-                  UI/UX Design Integration
+                  Platform Engineering
                 </span>
                 <span className="text-2xl text-center font-light text-gray-400">
-                  By collaborating with designers and using tools like Figma and
-                  Storybook, I ensure that the final product is both functional
-                  and aesthetically pleasing. My work aims to enhance user
-                  engagement and satisfaction by prioritizing ease of use and
-                  visual appeal.
-                </span>
+I design and maintain scalable platforms in JavaScript/TypeScript environments, enhancing component libraries and automating accessibility testing with tools like Storybook and Playwright. I optimize CI pipelines and enforce coding standards using custom scripts and linters such as Stylelint and ESLint. I also build data-driven dashboards with Redash and Snowplow to improve team workflows.                </span>
               </div>
             </div>
           </div>

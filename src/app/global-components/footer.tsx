@@ -14,9 +14,9 @@ import { resumeUri } from "../utils/constants";
 import Link from "next/link";
 
 const SocialLinks = {
-  GitHub: "https://github.com/taanguiano",
+  GitHub: "https://github.com/trizzyanguizzy",
   LinkedIn: "https://linkedin.com/in/tristan-anguiano",
-  X: "https://x.com/anguianodev",
+  X: "https://x.com/trizzyanguizzy",
 };
 
 export const Footer = () => {
