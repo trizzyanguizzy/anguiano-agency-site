@@ -50,17 +50,9 @@ export const Header = () => {
             <span className="sr-only">Home</span>
           </Link>
           <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={() => downloadURI(resumeUri, "Tristan_Anguiano_Resume.pdf")}
-              className="relative inline-flex items-center gap-2 rounded-lg border border-glass px-4 py-2 text-sm font-medium text-pText/80 hover:text-white backdrop-blur bg-glass/40 hover:bg-white/5 transition-colors duration-300"
-            >
-              <span className="bg-gradient-to-r from-pixie-powder via-grape to-medium-orchid bg-clip-text text-transparent">
-                Resume
-              </span>
-            </button>
             <a
               href="mailto:anguiano.dev@gmail.com"
-              className="inline-flex items-center rounded-lg bg-hero-title-gradient px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-pink-600/20 hover:scale-[1.04] active:scale-95 transition-transform"
+              className="inline-flex items-center rounded-lg bg-hero-title-gradient px-5 py-2 text-2xl font-medium text-white shadow-lg shadow-pink-600/20 hover:scale-[1.04] active:scale-95 transition-transform"
             >
               Hire Me
             </a>
