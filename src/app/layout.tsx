@@ -3,6 +3,28 @@ import { Container } from "./global-components/container";
 import { Footer } from "./global-components/footer";
 import { Header } from "./global-components/header";
 
+export const metadata = {
+  title: "Tristan Anguiano Portfolio",
+  description: "Full Stack / Front-End Engineer portfolio for Tristan Anguiano",
+  icons: {
+    icon: [
+      { url: "/tanguianoLogofavIcon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: ["/tanguianoLogofavIcon.svg"],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
+        color: "#24272e",
+      },
+    ],
+  },
+  manifest: "/site.webmanifest",
+  themeColor: "#24272e",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -14,12 +36,6 @@ export default function RootLayout({
         <meta
           name="viewport"
           content="width=device-width, height=device-height, initial-scale=1"
-        />
-        <link
-          rel="icon"
-          href="../../public/tanguianoLogofavIcon.svg"
-          sizes="any"
-          type="image/svg+xml"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
