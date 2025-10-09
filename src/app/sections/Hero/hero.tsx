@@ -39,7 +39,7 @@ export const Hero = () => {
   const { downloadURI } = useDownloadFile();
   return (
     <section
-      className="relative text-center px-4 md:px-8 pt-36 md:pt-44 pb-24 md:pb-36 flex items-center"
+      className="relative text-center px-4 md:px-8 pt-36 md:pt-44 pb-24 md:pb-36 flex items-center min-h-screen"
       aria-labelledby="hero-heading"
     >
       {/* Decorative radial / grid backdrop */}
