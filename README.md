@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tristan Anguiano - Portfolio Website
+
+A modern, performant portfolio website built with Next.js 15, TypeScript, and Tailwind CSS.
+
+## Features
+
+- ⚡️ **Next.js 15** with App Router and React Server Components
+- 🎨 **Tailwind CSS v4** for styling with custom design system
+- 📱 **Fully Responsive** - Mobile-first design
+- ♿️ **Accessible** - WCAG AA compliant
+- 🚀 **Optimized Performance** - Core Web Vitals optimized
+- 📧 **Contact Form** - With reCAPTCHA v3 and email integration
+- 📊 **Analytics** - HubSpot and Vercel Analytics integration
+- 🌙 **Dark Mode** - Automatic based on system preference
+- ✨ **Smooth Animations** - Using Framer Motion
+
+## Tech Stack
+
+**Frontend:**
+- Next.js 15
+- TypeScript 5.x
+- Tailwind CSS v4
+- Framer Motion
+- React Hook Form + Zod
+
+**Backend:**
+- Next.js Server Actions
+- Resend (Email)
+- React Email (Email templates)
+
+**Services:**
+- Vercel (Hosting)
+- HubSpot (Analytics)
+- Google reCAPTCHA v3
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/tristananguiano/tristandotcom.git
+cd tristandotcom
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Copy `.env.example` to `.env.local` and fill in your environment variables:
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Run the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create a `.env.local` file with the following variables:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```env
+# Resend API Key (for email)
+RESEND_API_KEY=your_resend_api_key
 
-## Deploy on Vercel
+# Google reCAPTCHA v3
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_recaptcha_site_key
+RECAPTCHA_SECRET_KEY=your_recaptcha_secret_key
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# HubSpot Portal ID (for analytics)
+NEXT_PUBLIC_HUBSPOT_PORTAL_ID=your_hubspot_portal_id
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Site URL
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
+
+## Project Structure
+
+```
+├── app/                    # Next.js app directory
+│   ├── actions/           # Server Actions
+│   ├── (pages)/           # Page routes
+│   ├── layout.tsx         # Root layout
+│   ├── globals.css        # Global styles
+│   ├── sitemap.ts         # Sitemap generation
+│   └── robots.ts          # Robots.txt
+├── components/            # React components
+│   ├── ui/               # Reusable UI components
+│   ├── layout/           # Layout components
+│   ├── contact/          # Contact form
+│   ├── experience/       # Experience timeline
+│   └── projects/         # Projects grid
+├── content/              # Content data
+│   ├── experience.ts     # Work experience
+│   └── projects.ts       # Projects
+├── lib/                  # Utilities
+│   ├── constants.ts      # Site constants
+│   ├── schemas.ts        # Zod schemas
+│   ├── utils.ts          # Utility functions
+│   └── email-templates.tsx # Email templates
+└── public/               # Static assets
+```
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run analyze` - Analyze bundle size
+
+## Deployment
+
+The site is optimized for deployment on Vercel:
+
+1. Push your code to GitHub
+2. Import the repository in Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy!
+
+## License
+
+© 2026 Tristan Anguiano. All rights reserved.
+
+## Contact
+
+- Email: anguiano.dev@gmail.com
+- LinkedIn: [linkedin.com/in/tristananguiano](https://linkedin.com/in/tristan-anguiano)
