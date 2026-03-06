@@ -57,8 +57,8 @@ export const projects: Project[] = [
   // },
   {
     title: 'Real-time Notification System',
-    company: 'Buildertrend',
-    description: 'Implemented real-time notifications using SignalR for construction management platform, delivering instant updates to users.',
+    company: 'Medical Solutions',
+    description: 'Implemented real-time notifications using SignalR for shift staffing platform, delivering instant updates to users.',
     image: '/images/projects/notifications.jpg',
     technologies: ['SignalR', '.NET Core', 'React', 'TypeScript'],
     impact: 'Increased user engagement by 30% through instant notification delivery',

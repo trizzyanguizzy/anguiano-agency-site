@@ -29,6 +29,10 @@ export function ExperienceTimeline() {
                     {exp.location}
                   </p>
                 </div>
+                <div className="sm:text-right shrink-0">
+                  <p className="text-sm font-medium text-foreground-secondary">{exp.period}</p>
+                  <p className="mt-0.5 text-xs text-foreground-tertiary">{exp.duration}</p>
+                </div>
               </div>
 
               <ul className="mt-6 space-y-3">

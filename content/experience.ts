@@ -2,74 +2,68 @@ export interface Experience {
   company: string;
   title: string;
   location: string;
-  // period: string;
+  period: string;
+  duration: string;
   achievements: string[];
   technologies: string[];
 }
 
 export const experiences: Experience[] = [
-  // {
-  //   company: 'Hudl',
-  //   title: 'Platform Software Engineer',
-  //   location: 'Remote',
-  //   period: 'December 2024 – Present',
-  //   achievements: [
-  //     'Improved visibility into component-driven development by integrating Storybook with Chromatic, enabling designers and engineers to preview, test, and collaborate on UI components in isolation',
-  //     'Standardized accessibility in Hudl\'s frontend monorepo by integrating React Aria and vitest-axe, ensuring components meet WCAG 2.1 AA compliance out-of-the-box',
-  //     'Automated Slack notifications for failed builds and deployed a Redash dashboard to visualize CI/CD health, enabling teams to identify and resolve pipeline issues 40% faster',
-  //     'Increased engineering efficiency by defining microservices in OpsLevel using Terraform, providing centralized ownership, documentation, and dependency mapping across 200+ services',
-  //   ],
-  //   technologies: ['Terraform', 'OpsLevel', 'Storybook', 'Chromatic', 'React Aria', 'vitest-axe', 'Snowplow', 'Redash'],
-  // },
   {
     company: 'Medical Solutions',
     title: 'Senior Software Engineer',
     location: 'Remote',
-    // period: 'April 2024 – December 2024',
+    period: '02/2023 – 12/2024',
+    duration: '1y 9m',
     achievements: [
-      'Led development of credentials feature in internal application, enabling 5,000+ users to upload and manage compliance documents, reducing manual processing time by 60%',
-      'Architected blob storage integration using Azure, reducing document retrieval times from 3 seconds to under 500ms while maintaining HIPAA compliance',
-      'Mentored junior engineers on React best practices, TypeScript patterns, and testing strategies, resulting in 30% reduction in code review cycles',
-      'Improved application performance by implementing code splitting and lazy loading, reducing initial bundle size by 40%',
+      'Developed 100% of a Credentials feature UI, allowing travel clinicians to upload and store professional credentials in blob storage, resulting in increased clinician ownership during onboarding and employment for contract work.',
+      'Developed 100% of a Profile Strength feature UI, gamifying the information submission process and providing a roadmap for clinicians, resulting in higher task completion rates, reduced recruiter stress, and an overall smoother onboarding experience.',
+      'Maintained an average output of 15 story points per two-week sprint using Azure DevOps, ensuring steady feature delivery and meeting project deadlines consistently.',
+      'Modernized a 2000+ line form by converting it to use React Hook Form, Yup, and Zod, transitioning from class components to functional, migrating state management and data fetching from Redux to Tanstack Query, and implementing custom hooks, improving maintainability and performance.',
+      'Partnered with UX using Figma to design and build a drag-and-drop file upload component in React while refining the grid system with CSS Grid, resulting in improved usability and consistent layouts across the application.',
     ],
-    technologies: ['React', 'TypeScript', 'Azure Blob Storage', 'React Hook Form', 'Zod', 'Tanstack Query'],
+    technologies: ['React', 'TypeScript', 'React Hook Form', 'Yup', 'Zod', 'Tanstack Query', 'Redux', 'Azure Blob Storage', 'Azure DevOps', 'Figma', 'CSS Grid'],
   },
   {
     company: 'Fusion Medical Staffing',
     title: 'Front End Software Engineer II',
-    location: 'Omaha, NE',
-    // period: 'August 2022 – March 2024',
+    location: 'Remote',
+    period: '06/2021 – 02/2023',
+    duration: '1y 8m',
     achievements: [
-      'Built and maintained React Native mobile app serving 14,000+ healthcare professionals, providing job search, application tracking, and document management',
-      'Optimized mobile app performance by reducing JavaScript bundle size by 35% and implementing native modules for CPU-intensive operations',
-      'Implemented comprehensive E2E testing suite using Playwright, increasing test coverage from 40% to 85% and reducing production bugs by 50%',
-      'Collaborated with UX designers to redesign application flow, resulting in 25% increase in job applications submitted',
+      "Developed and deployed 'Marketplace', a React Native mobile app, a platform for travel nurses to search for jobs, agencies to list their details and perks, resulting in 14K new users on iOS and Android on launch day.",
+      "Collaborated with the Product team to develop more than 5 new features in React for the 'Marketplace' web app, resulting in over $1M in lead generation for the company.",
+      'Collaborated with the UX team to refine UI designs in Figma and implemented Storybook to house over 10 custom-built React UI components, enhancing design consistency and developer accessibility.',
+      'Onboarded and mentored two new developers, who successfully contributed to the React and React Native projects, enhancing overall scrum output.',
     ],
-    technologies: ['React Native', 'TypeScript', 'Expo', 'Playwright', 'React Navigation', 'Styled Components'],
+    technologies: ['React Native', 'React', 'TypeScript', 'Storybook', 'Figma', 'iOS', 'Android'],
   },
   {
     company: 'Buildertrend',
     title: 'Full Stack Software Engineer',
     location: 'Omaha, NE',
-    // period: 'June 2021 – August 2022',
+    period: '07/2019 – 06/2021',
+    duration: '2y',
     achievements: [
-      'Developed and maintained features for construction management SaaS platform used by 10,000+ construction companies',
-      'Built RESTful APIs using .NET Core and Entity Framework, serving 1M+ requests per day with 99.9% uptime',
-      'Migrated legacy AngularJS components to React, improving load times by 50% and enhancing maintainability',
-      'Implemented real-time notifications using SignalR, improving user engagement by 30%',
+      'Contributed to the migration of over 1M lines of legacy WebForms code, leading to improved maintainability and future-proofing of the application using TypeScript & React.',
+      'Wrote and ran targeted SQL & LINQ scripts, effectively maintaining data integrity and application performance.',
+      'Created and implemented 5+ RESTful API services using in-house ORM, which optimized data flow and service functionality.',
+      'On the bug triage team, resolved over 100 issues in three months, reducing the application defects backlog by 30% and improving application reliability.',
+      'Developed technical discovery plans and level of effort outlines, and executed them post-approval, providing stakeholders with a clear breakdown of work, business requirements, and timelines, ensuring alignment and informed decision-making.',
     ],
-    technologies: ['React', 'TypeScript', '.NET Core', 'Entity Framework', 'SQL Server', 'SignalR'],
+    technologies: ['TypeScript', 'React', 'SQL', 'LINQ', '.NET', 'RESTful APIs', 'WebForms'],
   },
   {
     company: 'Union Pacific',
     title: 'Software Engineer Intern',
     location: 'Omaha, NE',
-    // period: 'May 2018 – August 2018',
+    period: '08/2016 – 07/2019',
+    duration: '2y 9m',
     achievements: [
-      'Developed internal web applications for railroad operations tracking, serving 500+ employees',
-      'Built reporting dashboard using React and .NET, providing real-time visibility into train schedules and maintenance',
-      'Collaborated with senior engineers on database optimization, reducing query execution times by 40%',
+      'Developed an AngularJS application for a DevOps initiative to streamline the production application publish process.',
+      'Leveraged Atlassian Jira Rest Web API to develop an AngularJS application that assisted management in the allocation of financials and resources to projects in the IT department.',
+      'Developed a mobile application feature that connected mobile devices to AEI readers to retrieve information from cars in the train yard using Handlebars.js.',
     ],
-    technologies: ['React', 'C#', '.NET', 'SQL Server', 'JavaScript'],
+    technologies: ['AngularJS', 'JavaScript', 'Jira REST API', 'Handlebars.js'],
   },
 ];
