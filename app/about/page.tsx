@@ -52,11 +52,8 @@ export default function AboutPage() {
 
         <AnimatedSection delay={0.2} className="space-y-8">
           {/* Profile Image Placeholder */}
-          <div className="aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-accent-orange to-accent-orange-hover">
-            <div className="flex h-full items-center justify-center text-white">
-              <img src="src/public/images/anguianoHeadshot.png" />
-            </div>
-          </div>
+          <img className='rounded-xl' src="https://ur18ygzmshmoaei4.public.blob.vercel-storage.com/anguianoHeadshot.png" />
+
 
           {/* Quick Info */}
           <div className="space-y-4">
