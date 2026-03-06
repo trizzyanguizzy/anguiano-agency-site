@@ -35,7 +35,7 @@ export function Header() {
           href="/"
           className="text-lg font-semibold tracking-tight text-foreground-primary transition-colors hover:text-accent-orange"
         >
-          <img height="100" width="100" color="white" src="../images/ta-logo.png" />
+          {SITE_CONFIG.name}
         </Link>
 
         {/* Desktop Navigation */}
