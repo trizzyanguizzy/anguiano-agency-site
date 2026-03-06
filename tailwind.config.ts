@@ -21,10 +21,10 @@ const config: Config = {
         },
         accent: {
           orange: {
-            DEFAULT: '#fffacd',
-            hover: '#fffbdb',
-            light: '#fffef0',
-            dark: '#fff0a5',
+            DEFAULT: '#10B981',
+            hover: '#059669',
+            light: '#34D399',
+            dark: '#047857',
           },
         },
         border: {
