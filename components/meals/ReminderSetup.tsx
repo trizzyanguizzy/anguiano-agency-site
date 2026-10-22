@@ -31,6 +31,36 @@ function isStandalone() {
   );
 }
 
+/** Best guess at a readable name; browsers don't expose the phone's actual name. */
+function defaultDeviceLabel() {
+  const ua = navigator.userAgent;
+  const device = /iPhone/.test(ua)
+    ? 'iPhone'
+    : /iPad/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+      ? 'iPad'
+      : /Android/.test(ua)
+        ? 'Android'
+        : /Mac/.test(ua)
+          ? 'Mac'
+          : /Windows/.test(ua)
+            ? 'Windows PC'
+            : 'Device';
+  const browser = /Edg\//.test(ua) ? 'Edge' : /Firefox\//.test(ua) ? 'Firefox' : /Chrome\//.test(ua) ? 'Chrome' : '';
+  return browser && !isStandalone() ? `${device} · ${browser}` : device;
+}
+
+/** Same id the server derives from the push endpoint (sha256, first 32 hex chars). */
+async function endpointId(endpoint: string) {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(endpoint));
+  return Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, '0'))
+    .join('')
+    .slice(0, 32);
+}
+
+function addedOn(iso: string) {
+  return new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' }).format(new Date(iso));
+}
+
 async function getRegistration() {
   return (
     (await navigator.serviceWorker.getRegistration(SW_SCOPE)) ??
@@ -44,6 +74,8 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [devices, setDevices] = useState<Device[]>([]);
+  const [myId, setMyId] = useState<string | null>(null);
+  const [editing, setEditing] = useState<{ id: string; label: string } | null>(null);
 
   const loadDevices = useCallback(async () => {
     const res = await fetch('/api/meals/subscribe', { cache: 'no-store' }).catch(() => null);
@@ -59,6 +91,7 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
       if (Notification.permission === 'denied') return setStatus('denied');
       const reg = await getRegistration();
       const sub = await reg.pushManager.getSubscription();
+      if (sub) setMyId(await endpointId(sub.endpoint));
       setStatus(sub ? 'subscribed' : 'ready');
     })().catch(() => setStatus('unsupported'));
     loadDevices();
@@ -85,9 +118,10 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
       const res = await fetch('/api/meals/subscribe', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ subscription: sub.toJSON(), label: label.trim() || 'Phone' }),
+        body: JSON.stringify({ subscription: sub.toJSON(), label: label.trim() || defaultDeviceLabel() }),
       });
       if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error ?? `HTTP ${res.status}`);
+      setMyId(await endpointId(sub.endpoint));
       setStatus('subscribed');
       setMessage('Reminders are on for this device.');
       loadDevices();
@@ -131,12 +165,27 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
         });
         await sub.unsubscribe();
       }
+      setMyId(null);
       setStatus('ready');
       setMessage('Reminders are off for this device.');
       loadDevices();
     } finally {
       setBusy(false);
     }
+  }
+
+  async function saveRename() {
+    if (!editing) return;
+    const next = editing.label.trim();
+    if (!next) return setEditing(null);
+    const res = await fetch('/api/meals/subscribe', {
+      method: 'PATCH',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ id: editing.id, label: next }),
+    });
+    if (!res.ok) setMessage('Couldn’t rename that device.');
+    setEditing(null);
+    loadDevices();
   }
 
   async function removeDevice(id: string) {
@@ -198,13 +247,13 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
       {status === 'ready' && (
         <section className={card}>
           <label htmlFor="device-label" className="text-sm font-medium text-foreground-secondary">
-            Name this device
+            Whose device is this?
           </label>
           <input
             id="device-label"
             value={label}
             onChange={(e) => setLabel(e.target.value)}
-            placeholder="Tristan’s iPhone"
+            placeholder="e.g. Tristan’s iPhone"
             maxLength={60}
             className="mt-1 h-11 w-full rounded-xl border border-border-default bg-background-primary px-3 text-foreground-primary outline-none focus:border-accent-orange"
           />
@@ -239,15 +288,68 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
           </h2>
           <ul className="divide-y divide-border-subtle rounded-2xl border border-border-subtle bg-background-secondary">
             {devices.map((d) => (
-              <li key={d.id} className="flex items-center justify-between gap-3 px-4 py-3">
-                <span>{d.label}</span>
-                <button
-                  type="button"
-                  onClick={() => removeDevice(d.id)}
-                  className="text-sm text-foreground-tertiary hover:text-red-400"
-                >
-                  Remove
-                </button>
+              <li key={d.id} className="px-4 py-3">
+                {editing?.id === d.id ? (
+                  <form
+                    className="flex gap-2"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      saveRename();
+                    }}
+                  >
+                    <label htmlFor={`rename-${d.id}`} className="sr-only">
+                      Device name
+                    </label>
+                    <input
+                      id={`rename-${d.id}`}
+                      autoFocus
+                      value={editing.label}
+                      maxLength={60}
+                      onChange={(e) => setEditing({ id: d.id, label: e.target.value })}
+                      className="h-10 min-w-0 flex-1 rounded-lg border border-border-default bg-background-primary px-3 text-foreground-primary outline-none focus:border-accent-orange"
+                    />
+                    <button type="submit" className="rounded-lg bg-accent-orange px-3 text-sm font-semibold text-background-primary">
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setEditing(null)}
+                      className="rounded-lg px-2 text-sm text-foreground-tertiary"
+                    >
+                      Cancel
+                    </button>
+                  </form>
+                ) : (
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="min-w-0">
+                      <p className="truncate font-medium">
+                        {d.label}
+                        {d.id === myId && (
+                          <span className="ml-2 rounded-full bg-accent-orange/15 px-2 py-0.5 text-xs font-medium text-accent-orange-light">
+                            This device
+                          </span>
+                        )}
+                      </p>
+                      <p className="text-xs text-foreground-tertiary">Added {addedOn(d.createdAt)}</p>
+                    </div>
+                    <div className="flex shrink-0 gap-3 text-sm">
+                      <button
+                        type="button"
+                        onClick={() => setEditing({ id: d.id, label: d.label })}
+                        className="text-foreground-secondary hover:text-foreground-primary"
+                      >
+                        Rename
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => removeDevice(d.id)}
+                        className="text-foreground-tertiary hover:text-red-400"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
