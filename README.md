@@ -136,3 +136,14 @@ The site is optimized for deployment on Vercel:
 
 - Email: anguiano.dev@gmail.com
 - LinkedIn: [linkedin.com/in/tristananguiano](https://linkedin.com/in/tristan-anguiano)
+
+## /meals — household meal planner
+
+A private, installable web app at `/meals`: today's lunch and dinner, the week, a grocery checklist that syncs between phones, and push reminders (lunch ~10am, dinner ~3pm, freezer-to-fridge ~8pm, America/Chicago).
+
+- **Weekly plans:** `content/meals/` (see the README there for the format and how to add a week)
+- **Code:** `app/(meals)/meals`, `app/api/meals`, `app/api/cron/meals`, `lib/meals`, `proxy.ts`, `public/sw-meals.js`
+- **Env vars:** see the `/meals` section of `.env.example`
+- **Storage:** Upstash Redis via the Vercel Marketplace (push subscriptions, grocery checks, send dedupe)
+- **Tests:** `npm test`
+- **Manual cron check:** `curl -H "Authorization: Bearer $CRON_SECRET" "https://tristananguiano.com/api/cron/meals/dinner-cdt?force=1&dryRun=1"`

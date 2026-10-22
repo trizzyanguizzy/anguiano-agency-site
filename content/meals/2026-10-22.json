@@ -1,0 +1,567 @@
+{
+  "weekId": "2026-10-22",
+  "household": 2,
+  "notes": [
+    "Shopping at Hy-Vee. Link the Perks account for member pricing.",
+    "When you get home: freeze the ground beef, chicken thighs, and chicken breast."
+  ],
+  "days": [
+    {
+      "date": "2026-10-22",
+      "lunch": {
+        "title": "Tuna & avocado",
+        "items": [
+          "Can of tuna",
+          "Sliced avocado",
+          "Crackers",
+          "High-protein Greek yogurt cup"
+        ],
+        "proteinG": "~40–45g",
+        "groceries": [
+          {
+            "id": "tuna",
+            "name": "Tuna",
+            "qty": "4 cans or pouches",
+            "note": "Thu–Fri lunches"
+          },
+          {
+            "id": "avocado-1",
+            "name": "Avocados",
+            "qty": "2"
+          },
+          {
+            "id": "crackers",
+            "name": "Crackers",
+            "qty": "1 box"
+          },
+          {
+            "id": "yogurt-cups",
+            "name": "High-protein Greek yogurt cups",
+            "qty": "4"
+          }
+        ]
+      },
+      "dinner": {
+        "title": "Lemon garlic butter cod",
+        "items": [
+          "Roasted broccoli",
+          "Jasmine rice"
+        ],
+        "proteinG": "~50g",
+        "startCookingNote": "Rice and broccoli first; cod cooks in ~15 min.",
+        "fromFreezer": [],
+        "prepTonight": [],
+        "groceries": [
+          {
+            "id": "cod",
+            "name": "Wild-caught cod",
+            "qty": "1.25 lb",
+            "note": "Fresh or frozen"
+          },
+          {
+            "id": "broccoli-1",
+            "name": "Broccoli",
+            "qty": "1 crown"
+          },
+          {
+            "id": "rice",
+            "name": "Jasmine rice",
+            "qty": "1 bag",
+            "note": "Also Mon and Tue"
+          },
+          {
+            "id": "lemons",
+            "name": "Lemons",
+            "qty": "3",
+            "note": "1 is for Sunday"
+          },
+          {
+            "id": "garlic",
+            "name": "Garlic",
+            "qty": "2 heads",
+            "note": "Used all week"
+          },
+          {
+            "id": "butter",
+            "name": "Butter",
+            "note": "Also Friday"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-23",
+      "lunch": {
+        "title": "Tuna & avocado",
+        "items": [
+          "Can of tuna",
+          "Sliced avocado",
+          "Crackers",
+          "High-protein Greek yogurt cup"
+        ],
+        "proteinG": "~40–45g",
+        "groceries": []
+      },
+      "dinner": {
+        "title": "Filet mignon",
+        "items": [
+          "Garlic smashed potatoes",
+          "Green beans"
+        ],
+        "proteinG": "~60g",
+        "startCookingNote": "Boil the potatoes first (~20 min); sear filets last.",
+        "fromFreezer": [],
+        "prepTonight": [],
+        "groceries": [
+          {
+            "id": "filet",
+            "name": "Filet mignon",
+            "qty": "2 × ~8 oz",
+            "note": "Ask the butcher for 1½\" thick"
+          },
+          {
+            "id": "yukon",
+            "name": "Yukon gold potatoes",
+            "qty": "2 lb"
+          },
+          {
+            "id": "green-beans",
+            "name": "Green beans",
+            "qty": "1 lb"
+          },
+          {
+            "id": "garlic-have-fri",
+            "name": "Garlic, butter",
+            "have": true
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-24",
+      "lunch": {
+        "title": "Turkey & cheese sandwiches",
+        "items": [
+          "Deli turkey & cheese on whole-grain bread",
+          "String cheese"
+        ],
+        "proteinG": "~40–45g",
+        "groceries": [
+          {
+            "id": "deli-turkey",
+            "name": "Deli turkey",
+            "qty": "1 lb",
+            "note": "Sat–Sun lunches"
+          },
+          {
+            "id": "sliced-cheese",
+            "name": "Sliced cheese",
+            "qty": "1 pack"
+          },
+          {
+            "id": "bread",
+            "name": "Whole-grain bread",
+            "qty": "1 loaf"
+          },
+          {
+            "id": "string-cheese",
+            "name": "String cheese",
+            "qty": "1 pack"
+          }
+        ]
+      },
+      "dinner": {
+        "title": "Homemade beef chili",
+        "items": [
+          "Shredded cheddar",
+          "Oyster crackers",
+          "Cinnamon rolls on the side"
+        ],
+        "proteinG": "~50g",
+        "startCookingNote": "Brown the beef and onion, then simmer 30+ min. Bake cinnamon rolls while it simmers.",
+        "fromFreezer": [
+          "Ground beef (1.5 lb)"
+        ],
+        "prepTonight": [],
+        "groceries": [
+          {
+            "id": "ground-beef-chili",
+            "name": "93% lean ground beef",
+            "qty": "1.5 lb",
+            "note": "Freeze when home"
+          },
+          {
+            "id": "tomato-juice",
+            "name": "Tomato juice",
+            "qty": "46 oz"
+          },
+          {
+            "id": "pinto",
+            "name": "Pinto beans",
+            "qty": "1 can"
+          },
+          {
+            "id": "kidney",
+            "name": "Kidney beans",
+            "qty": "1 can"
+          },
+          {
+            "id": "black-beans-1",
+            "name": "Black beans",
+            "qty": "1 can"
+          },
+          {
+            "id": "jalapeno",
+            "name": "Jalapeño",
+            "qty": "1"
+          },
+          {
+            "id": "chili-packet",
+            "name": "Chili seasoning packet",
+            "qty": "1"
+          },
+          {
+            "id": "onion-1",
+            "name": "Yellow onion",
+            "qty": "1"
+          },
+          {
+            "id": "cheddar",
+            "name": "Shredded cheddar",
+            "qty": "16 oz",
+            "note": "Also Mon and Wed"
+          },
+          {
+            "id": "oyster-crackers",
+            "name": "Oyster crackers",
+            "qty": "1 bag"
+          },
+          {
+            "id": "cinnamon-rolls",
+            "name": "Cinnamon rolls",
+            "qty": "1 tube"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-25",
+      "lunch": {
+        "title": "Turkey & cheese sandwiches",
+        "items": [
+          "Deli turkey & cheese on whole-grain bread",
+          "String cheese"
+        ],
+        "proteinG": "~40–45g",
+        "groceries": []
+      },
+      "dinner": {
+        "title": "Greek chicken thighs",
+        "items": [
+          "Tzatziki",
+          "Cucumber-tomato-feta salad",
+          "Pita"
+        ],
+        "proteinG": "~55g",
+        "startCookingNote": "Make tzatziki first so it chills; thighs roast ~25 min.",
+        "fromFreezer": [
+          "Chicken thighs (1.5 lb)"
+        ],
+        "prepTonight": [],
+        "groceries": [
+          {
+            "id": "chicken-thighs",
+            "name": "Boneless chicken thighs",
+            "qty": "1.5 lb",
+            "note": "Freeze when home"
+          },
+          {
+            "id": "greek-yogurt",
+            "name": "Plain Greek yogurt",
+            "qty": "32 oz",
+            "note": "Also Monday"
+          },
+          {
+            "id": "cucumbers",
+            "name": "Cucumbers",
+            "qty": "2"
+          },
+          {
+            "id": "cherry-tomatoes",
+            "name": "Cherry tomatoes",
+            "qty": "1 pint"
+          },
+          {
+            "id": "feta",
+            "name": "Feta",
+            "qty": "4 oz"
+          },
+          {
+            "id": "pita",
+            "name": "Pita",
+            "qty": "1 pack"
+          },
+          {
+            "id": "greek-seasoning",
+            "name": "Greek seasoning",
+            "note": "Check pantry"
+          },
+          {
+            "id": "lemon-garlic-have-sun",
+            "name": "Lemon, garlic",
+            "have": true
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-26",
+      "lunch": {
+        "title": "Eggs & cottage cheese",
+        "items": [
+          "3 hard-boiled eggs",
+          "Cottage cheese cup",
+          "Sliced avocado",
+          "Meat stick"
+        ],
+        "proteinG": "~40g",
+        "groceries": [
+          {
+            "id": "eggs",
+            "name": "Pre-peeled hard-boiled eggs",
+            "qty": "12",
+            "note": "Mon–Tue lunches"
+          },
+          {
+            "id": "cottage-cheese",
+            "name": "Cottage cheese single cups",
+            "qty": "4"
+          },
+          {
+            "id": "avocado-2",
+            "name": "Avocados",
+            "qty": "2"
+          },
+          {
+            "id": "meat-sticks",
+            "name": "Meat sticks or jerky",
+            "qty": "4"
+          }
+        ]
+      },
+      "dinner": {
+        "title": "Chicken burrito bowls",
+        "items": [
+          "Rice",
+          "Black beans",
+          "Corn",
+          "Salsa",
+          "Cheddar",
+          "Yogurt-lime sauce"
+        ],
+        "proteinG": "~50g",
+        "startCookingNote": "Cook all 2 lb of chicken breast tonight.",
+        "fromFreezer": [
+          "Chicken breast (2 lb)"
+        ],
+        "prepTonight": [
+          "Slice and fridge half the chicken for Wednesday's lunch wraps."
+        ],
+        "groceries": [
+          {
+            "id": "chicken-breast",
+            "name": "Boneless skinless chicken breast",
+            "qty": "2 lb",
+            "note": "Half is for Wednesday lunch. Freeze when home."
+          },
+          {
+            "id": "black-beans-2",
+            "name": "Black beans",
+            "qty": "1 can"
+          },
+          {
+            "id": "corn",
+            "name": "Frozen corn",
+            "qty": "1 bag"
+          },
+          {
+            "id": "salsa",
+            "name": "Salsa",
+            "qty": "1 jar"
+          },
+          {
+            "id": "limes",
+            "name": "Limes",
+            "qty": "2"
+          },
+          {
+            "id": "cilantro",
+            "name": "Cilantro",
+            "qty": "1 bunch"
+          },
+          {
+            "id": "onion-2",
+            "name": "Yellow onion",
+            "qty": "1"
+          },
+          {
+            "id": "taco-seasoning",
+            "name": "Taco seasoning",
+            "note": "Check pantry"
+          },
+          {
+            "id": "rice-cheddar-yogurt-have",
+            "name": "Rice, cheddar, Greek yogurt",
+            "have": true
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-27",
+      "lunch": {
+        "title": "Eggs & cottage cheese",
+        "items": [
+          "3 hard-boiled eggs",
+          "Cottage cheese cup",
+          "Sliced avocado",
+          "Meat stick"
+        ],
+        "proteinG": "~40g",
+        "groceries": []
+      },
+      "dinner": {
+        "title": "Shrimp stir-fry",
+        "items": [
+          "Snap peas",
+          "Bell peppers",
+          "Broccoli",
+          "Over rice"
+        ],
+        "proteinG": "~50g",
+        "startCookingNote": "Thaw shrimp in cold water ~15 min if not moved to the fridge last night.",
+        "fromFreezer": [
+          "Shrimp (1 lb)"
+        ],
+        "prepTonight": [],
+        "groceries": [
+          {
+            "id": "shrimp",
+            "name": "Frozen raw shrimp, peeled and deveined",
+            "qty": "1 lb"
+          },
+          {
+            "id": "snap-peas",
+            "name": "Snap peas",
+            "qty": "8 oz"
+          },
+          {
+            "id": "bell-peppers",
+            "name": "Bell peppers",
+            "qty": "2"
+          },
+          {
+            "id": "broccoli-2",
+            "name": "Broccoli",
+            "qty": "1 crown"
+          },
+          {
+            "id": "green-onions",
+            "name": "Green onions",
+            "qty": "1 bunch"
+          },
+          {
+            "id": "soy-sauce",
+            "name": "Soy sauce",
+            "note": "Check pantry"
+          },
+          {
+            "id": "rice-garlic-have",
+            "name": "Rice, garlic",
+            "have": true
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-28",
+      "lunch": {
+        "title": "Chicken wraps",
+        "items": [
+          "Monday's sliced chicken in a tortilla",
+          "Avocado",
+          "Cheddar"
+        ],
+        "proteinG": "~45g",
+        "groceries": [
+          {
+            "id": "tortillas",
+            "name": "Tortillas",
+            "qty": "1 pack"
+          },
+          {
+            "id": "avocado-3",
+            "name": "Avocados",
+            "qty": "2"
+          },
+          {
+            "id": "chicken-cheddar-have",
+            "name": "Cooked chicken from Monday, cheddar",
+            "have": true
+          }
+        ]
+      },
+      "dinner": {
+        "title": "Ground beef & sweet potato skillet",
+        "items": [
+          "Topped with cheddar",
+          "Roasted Brussels sprouts"
+        ],
+        "proteinG": "~60g",
+        "startCookingNote": "Get the sweet potatoes and sprouts roasting first (~25 min).",
+        "fromFreezer": [
+          "Ground beef (1.25 lb)"
+        ],
+        "prepTonight": [],
+        "groceries": [
+          {
+            "id": "ground-beef-skillet",
+            "name": "93% lean ground beef",
+            "qty": "1.25 lb",
+            "note": "Freeze when home"
+          },
+          {
+            "id": "sweet-potatoes",
+            "name": "Sweet potatoes",
+            "qty": "3"
+          },
+          {
+            "id": "brussels",
+            "name": "Brussels sprouts",
+            "qty": "1 lb"
+          },
+          {
+            "id": "onion-3",
+            "name": "Yellow onion",
+            "qty": "1"
+          },
+          {
+            "id": "cheddar-garlic-have",
+            "name": "Cheddar, garlic",
+            "have": true
+          }
+        ]
+      }
+    }
+  ],
+  "extras": [
+    {
+      "id": "chips",
+      "name": "Chips and other savory snacks"
+    },
+    {
+      "id": "halloween-candy",
+      "name": "Halloween candy bags"
+    }
+  ]
+}
