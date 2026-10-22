@@ -77,9 +77,12 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
   const [myId, setMyId] = useState<string | null>(null);
   const [editing, setEditing] = useState<{ id: string; label: string } | null>(null);
 
-  const loadDevices = useCallback(async () => {
+  const loadDevices = useCallback(async (): Promise<Device[] | null> => {
     const res = await fetch('/api/meals/subscribe', { cache: 'no-store' }).catch(() => null);
-    if (res?.ok) setDevices((await res.json()).devices);
+    if (!res?.ok) return null;
+    const list = (await res.json()).devices as Device[];
+    setDevices(list);
+    return list;
   }, []);
 
   useEffect(() => {
@@ -89,12 +92,16 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
       if (!supported) return setStatus(isIos() && !isStandalone() ? 'ios-not-installed' : 'unsupported');
       if (isIos() && !isStandalone()) return setStatus('ios-not-installed');
       if (Notification.permission === 'denied') return setStatus('denied');
-      const reg = await getRegistration();
+      const [reg, list] = await Promise.all([getRegistration(), loadDevices()]);
       const sub = await reg.pushManager.getSubscription();
-      if (sub) setMyId(await endpointId(sub.endpoint));
-      setStatus(sub ? 'subscribed' : 'ready');
+      if (!sub) return setStatus('ready');
+      const id = await endpointId(sub.endpoint);
+      setMyId(id);
+      // The browser can hold a subscription the server never saved (e.g. it was created before
+      // storage was set up). Only call it "on" when the server knows this device; otherwise show
+      // the name field so enabling re-registers the existing subscription.
+      setStatus(list === null || list.some((d) => d.id === id) ? 'subscribed' : 'ready');
     })().catch(() => setStatus('unsupported'));
-    loadDevices();
   }, [vapidPublicKey, loadDevices]);
 
   async function enable() {
