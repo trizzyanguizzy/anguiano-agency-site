@@ -153,6 +153,18 @@ describe('buildMessage', () => {
     expect(msg?.title).toBe('No meal plan for tomorrow');
   });
 
+  it('notifications open the matching recipe page', () => {
+    expect(buildMessage('lunch', day('2026-10-22'), day('2026-10-23'))?.url).toBe('/meals/2026-10-22/lunch');
+    expect(buildMessage('dinner', day('2026-10-23'), day('2026-10-24'))?.url).toBe('/meals/2026-10-23/dinner');
+    expect(buildMessage('thaw', day('2026-10-23'), day('2026-10-24'))?.url).toBe('/meals/2026-10-24/dinner');
+  });
+
+  it('every meal in the seed week has a recipe with steps', () => {
+    for (const d of week.days) {
+      for (const meal of [d.lunch, d.dinner]) expect(meal?.recipe?.steps.length).toBeGreaterThan(0);
+    }
+  });
+
   it('lunch and dinner are skipped on days with no plan', () => {
     expect(buildMessage('lunch', undefined, undefined)).toBeNull();
     expect(buildMessage('dinner', undefined, undefined)).toBeNull();

@@ -22,7 +22,12 @@ export function buildMessage(slot: Slot, today: Day | undefined, tomorrow: Day |
   if (slot === 'lunch') {
     const lunch = today?.lunch;
     if (!lunch) return null;
-    return { title: `Lunch: ${lunch.title}`, body: join(lunch.items) || lunch.title, tag: 'lunch', url: '/meals' };
+    return {
+      title: `Lunch: ${lunch.title}`,
+      body: join(lunch.items) || lunch.title,
+      tag: 'lunch',
+      url: today ? `/meals/${today.date}/lunch` : '/meals',
+    };
   }
 
   if (slot === 'dinner') {
@@ -32,7 +37,12 @@ export function buildMessage(slot: Slot, today: Day | undefined, tomorrow: Day |
       .filter(Boolean)
       .join(' · ');
     const body = [details, dinner.startCookingNote].filter(Boolean).join('\n');
-    return { title: `Tonight: ${dinner.title}`, body: body || dinner.title, tag: 'dinner', url: '/meals' };
+    return {
+      title: `Tonight: ${dinner.title}`,
+      body: body || dinner.title,
+      tag: 'dinner',
+      url: today ? `/meals/${today.date}/dinner` : '/meals',
+    };
   }
 
   // thaw: tomorrow's freezer items + tonight's prep. Nag to plan if tomorrow is empty.
@@ -57,6 +67,6 @@ export function buildMessage(slot: Slot, today: Day | undefined, tomorrow: Day |
     title: freezer.length > 0 ? 'Freezer → fridge tonight' : 'Prep for tomorrow',
     body: lines.join('\n'),
     tag: 'thaw',
-    url: '/meals',
+    url: tomorrow.dinner ? `/meals/${tomorrow.date}/dinner` : '/meals',
   };
 }
