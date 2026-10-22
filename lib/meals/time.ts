@@ -1,8 +1,19 @@
 export const MEALS_TIME_ZONE = 'America/Chicago';
 
-function parts(now: Date) {
+/** True for IANA zone names the runtime understands, e.g. "America/Denver". */
+export function isValidTimeZone(tz: unknown): tz is string {
+  if (typeof tz !== 'string' || tz.length === 0 || tz.length > 64) return false;
+  try {
+    new Intl.DateTimeFormat('en-US', { timeZone: tz });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function parts(now: Date, timeZone: string) {
   const fmt = new Intl.DateTimeFormat('en-US', {
-    timeZone: MEALS_TIME_ZONE,
+    timeZone,
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
@@ -14,15 +25,25 @@ function parts(now: Date) {
   return out;
 }
 
+/** Local calendar date (YYYY-MM-DD) in the given zone. */
+export function localDate(now: Date, timeZone: string): string {
+  const p = parts(now, timeZone);
+  return `${p.year}-${p.month}-${p.day}`;
+}
+
+/** Local hour (0–23) in the given zone. */
+export function localHour(now: Date, timeZone: string): number {
+  return Number(parts(now, timeZone).hour);
+}
+
 /** Local Chicago calendar date as YYYY-MM-DD. */
 export function chicagoDate(now: Date = new Date()): string {
-  const p = parts(now);
-  return `${p.year}-${p.month}-${p.day}`;
+  return localDate(now, MEALS_TIME_ZONE);
 }
 
 /** Local Chicago hour, 0–23. */
 export function chicagoHour(now: Date = new Date()): number {
-  return Number(parts(now).hour);
+  return localHour(now, MEALS_TIME_ZONE);
 }
 
 /** Adds whole days to a YYYY-MM-DD string (calendar math, no time zone involved). */

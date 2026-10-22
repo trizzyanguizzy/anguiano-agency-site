@@ -7,7 +7,11 @@ export type StoredSubscription = {
   subscription: PushSubscription;
   label: string;
   createdAt: string;
+  /** IANA zone reported by the device, e.g. "America/Denver". Missing = Central. */
+  timeZone?: string;
 };
+
+export type DeviceRecord = StoredSubscription & { id: string };
 
 let configured = false;
 function configure() {
@@ -25,23 +29,30 @@ export async function subscriptionId(endpoint: string): Promise<string> {
   return Buffer.from(digest).toString('hex').slice(0, 32);
 }
 
-export async function listSubscriptions(): Promise<Array<StoredSubscription & { id: string }>> {
+export async function listSubscriptions(): Promise<DeviceRecord[]> {
   const all = (await requireRedis().hgetall<Record<string, StoredSubscription>>(keys.subs)) ?? {};
   return Object.entries(all).map(([id, value]) => ({ id, ...value }));
 }
 
-export async function saveSubscription(subscription: PushSubscription, label: string) {
+export async function saveSubscription(subscription: PushSubscription, label: string, timeZone?: string) {
   const id = await subscriptionId(subscription.endpoint);
-  const value: StoredSubscription = { subscription, label, createdAt: new Date().toISOString() };
+  const value: StoredSubscription = { subscription, label, createdAt: new Date().toISOString(), timeZone };
   await requireRedis().hset(keys.subs, { [id]: value });
   return id;
 }
 
-export async function renameSubscription(id: string, label: string): Promise<boolean> {
+/** Updates a device's name and/or time zone. Returns false if the device isn't registered. */
+export async function updateSubscription(
+  id: string,
+  patch: { label?: string; timeZone?: string }
+): Promise<boolean> {
   const redis = requireRedis();
   const current = await redis.hget<StoredSubscription>(keys.subs, id);
   if (!current) return false;
-  await redis.hset(keys.subs, { [id]: { ...current, label } });
+  const defined = Object.fromEntries(Object.entries(patch).filter(([, v]) => v !== undefined));
+  const next = { ...current, ...defined };
+  if (next.label === current.label && next.timeZone === current.timeZone) return true;
+  await redis.hset(keys.subs, { [id]: next });
   return true;
 }
 
@@ -49,7 +60,12 @@ export async function removeSubscription(id: string) {
   await requireRedis().hdel(keys.subs, id);
 }
 
-async function sendOne(sub: StoredSubscription & { id: string }, payload: PushPayload) {
+export async function sendToDevice(sub: DeviceRecord, payload: PushPayload) {
+  configure();
+  return sendOne(sub, payload);
+}
+
+async function sendOne(sub: DeviceRecord, payload: PushPayload) {
   try {
     await webpush.sendNotification(sub.subscription, JSON.stringify(payload), { TTL: 60 * 60, urgency: 'high' });
     return 'sent' as const;

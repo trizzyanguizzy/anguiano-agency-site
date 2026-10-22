@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
+import { browserTimeZone, endpointId, zoneLabel } from '@/lib/meals/client';
 import { SW_SCOPE, SW_URL } from './ServiceWorkerRegistrar';
 
 type Status =
@@ -12,7 +13,7 @@ type Status =
   | 'denied'
   | 'subscribed';
 
-type Device = { id: string; label: string; createdAt: string };
+type Device = { id: string; label: string; createdAt: string; timeZone: string | null };
 
 function urlBase64ToUint8Array(base64: string) {
   const padding = '='.repeat((4 - (base64.length % 4)) % 4);
@@ -47,14 +48,6 @@ function defaultDeviceLabel() {
             : 'Device';
   const browser = /Edg\//.test(ua) ? 'Edge' : /Firefox\//.test(ua) ? 'Firefox' : /Chrome\//.test(ua) ? 'Chrome' : '';
   return browser && !isStandalone() ? `${device} · ${browser}` : device;
-}
-
-/** Same id the server derives from the push endpoint (sha256, first 32 hex chars). */
-async function endpointId(endpoint: string) {
-  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(endpoint));
-  return Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, '0'))
-    .join('')
-    .slice(0, 32);
 }
 
 function addedOn(iso: string) {
@@ -125,7 +118,11 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
       const res = await fetch('/api/meals/subscribe', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ subscription: sub.toJSON(), label: label.trim() || defaultDeviceLabel() }),
+        body: JSON.stringify({
+          subscription: sub.toJSON(),
+          label: label.trim() || defaultDeviceLabel(),
+          timeZone: browserTimeZone(),
+        }),
       });
       if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error ?? `HTTP ${res.status}`);
       setMyId(await endpointId(sub.endpoint));
@@ -337,7 +334,9 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
                           </span>
                         )}
                       </p>
-                      <p className="text-xs text-foreground-tertiary">Added {addedOn(d.createdAt)}</p>
+                      <p className="text-xs text-foreground-tertiary">
+                        Added {addedOn(d.createdAt)} · {zoneLabel(d.timeZone)}
+                      </p>
                     </div>
                     <div className="flex shrink-0 gap-3 text-sm">
                       <button

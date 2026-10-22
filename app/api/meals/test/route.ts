@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   try {
     const result = await sendToEndpoint(parsed.data.endpoint, {
       title: 'Reminders are working ✅',
-      body: 'You’ll get lunch at ~10, dinner at ~3, and freezer reminders at ~8.',
+      body: 'Lunch 11–noon, dinner 5–6, freezer reminders 9–10pm, in your local time.',
       tag: 'test',
       url: '/meals',
     });

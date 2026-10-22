@@ -3,8 +3,12 @@ import type { PushPayload } from './push';
 
 export type Slot = 'lunch' | 'dinner' | 'thaw';
 
-/** Local America/Chicago hour each reminder is allowed to fire in. */
-export const TARGET_HOUR: Record<Slot, number> = { lunch: 10, dinner: 15, thaw: 20 };
+/**
+ * Local hour each reminder fires in, in each device's own time zone: lunch 11:00–11:59,
+ * dinner 5:00–5:59pm, freezer reminder 9:00–9:59pm. (Vercel Hobby cron fires somewhere
+ * within the scheduled hour, hence a window rather than an exact minute.)
+ */
+export const TARGET_HOUR: Record<Slot, number> = { lunch: 11, dinner: 17, thaw: 21 };
 
 export const SLOTS: readonly Slot[] = ['lunch', 'dinner', 'thaw'];
 

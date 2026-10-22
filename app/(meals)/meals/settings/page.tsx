@@ -8,7 +8,8 @@ export default function SettingsPage() {
       <header className="mb-4">
         <h1 className="text-3xl font-semibold">Reminders</h1>
         <p className="mt-1 text-foreground-secondary">
-          Lunch around 10, dinner around 3, and a freezer-to-fridge reminder around 8 the night before.
+          Lunch between 11 and noon, dinner between 5 and 6, and a freezer-to-fridge reminder between 9 and 10
+          the night before. Times follow whatever time zone your phone is in.
         </p>
       </header>
       <ReminderSetup vapidPublicKey={process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ?? ''} />
