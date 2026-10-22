@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import { CookieConsent } from '@/components/CookieConsent';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -109,23 +106,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID && (
-          <script
-            type="text/javascript"
-            id="hs-script-loader"
-            async
-            defer
-            src={`//js.hs-scripts.com/${process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID}.js`}
-          />
-        )}
       </head>
       <body className="font-sans antialiased">
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
-        <CookieConsent />
+        {children}
         <Analytics />
         <SpeedInsights />
       </body>
