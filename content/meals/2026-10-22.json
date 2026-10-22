@@ -39,7 +39,48 @@
             "name": "High-protein Greek yogurt cups",
             "qty": "4"
           }
-        ]
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 5,
+          "ingredients": [
+            {
+              "qty": "2 cans or pouches",
+              "name": "Tuna"
+            },
+            {
+              "qty": "1, sliced",
+              "name": "Avocado"
+            },
+            {
+              "qty": "a handful each",
+              "name": "Crackers"
+            },
+            {
+              "qty": "2",
+              "name": "High-protein Greek yogurt cups"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt, pepper, lemon or hot sauce",
+              "note": "optional"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Drain the tuna. Eat it straight, or mix in a spoonful of plain Greek yogurt, salt, and pepper for a quick tuna salad."
+            },
+            {
+              "text": "Slice the avocado and sprinkle with salt (and a squeeze of lemon if you have one open)."
+            },
+            {
+              "text": "Pack with crackers and a yogurt cup."
+            }
+          ],
+          "tips": [
+            "Pick an avocado that gives slightly when pressed; save the firmer ones for Monday and Wednesday."
+          ]
+        }
       },
       "dinner": {
         "title": "Lemon garlic butter cod",
@@ -86,7 +127,118 @@
             "name": "Butter",
             "note": "Also Friday"
           }
-        ]
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 10,
+          "cookMinutes": 25,
+          "ingredients": [
+            {
+              "qty": "1.25 lb",
+              "name": "Wild-caught cod",
+              "note": "thawed, patted very dry",
+              "group": "Cod"
+            },
+            {
+              "qty": "3 tbsp",
+              "name": "Butter",
+              "group": "Cod"
+            },
+            {
+              "qty": "4 cloves, minced",
+              "name": "Garlic",
+              "group": "Cod"
+            },
+            {
+              "qty": "1 (zest + juice)",
+              "name": "Lemon",
+              "group": "Cod"
+            },
+            {
+              "qty": "½ tsp",
+              "name": "Paprika",
+              "group": "Cod"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt and pepper",
+              "group": "Cod"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Olive oil",
+              "group": "Cod"
+            },
+            {
+              "qty": "1 crown, cut into florets",
+              "name": "Broccoli",
+              "group": "Broccoli"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Olive oil",
+              "group": "Broccoli"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt and pepper",
+              "group": "Broccoli"
+            },
+            {
+              "qty": "1 cup dry",
+              "name": "Jasmine rice",
+              "group": "Rice"
+            },
+            {
+              "qty": "1¼ cups",
+              "name": "Water",
+              "group": "Rice"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Start",
+              "text": "Heat the oven to 425°F."
+            },
+            {
+              "group": "Rice",
+              "text": "Rinse the rice, then bring it to a boil with the water and a pinch of salt. Cover, drop to low, and cook 15 minutes. Turn off the heat and leave it covered.",
+              "minutes": 15
+            },
+            {
+              "group": "Broccoli",
+              "text": "Toss the broccoli with oil, salt, and pepper on a sheet pan. Roast until the edges brown.",
+              "minutes": 18
+            },
+            {
+              "group": "Cod",
+              "text": "Season the cod on both sides with salt, pepper, and paprika."
+            },
+            {
+              "group": "Cod",
+              "text": "Heat the oil in a skillet over medium-high. Sear the cod without moving it until golden, then flip.",
+              "minutes": 4
+            },
+            {
+              "group": "Cod",
+              "text": "Cook the second side until the fish flakes easily (145°F inside).",
+              "minutes": 3
+            },
+            {
+              "group": "Cod",
+              "text": "Turn the heat to low. Add the butter and garlic and cook 30 seconds, then add the lemon juice and zest. Spoon the sauce over the fish.",
+              "minutes": 1
+            },
+            {
+              "group": "Serve",
+              "text": "Serve the cod over rice with the broccoli, pouring the extra pan sauce over everything."
+            }
+          ],
+          "tips": [
+            "Frozen cod: thaw overnight in the fridge, or in its sealed bag in cold water for about 30 minutes.",
+            "Dry fish = golden sear. Press it between paper towels before seasoning."
+          ]
+        }
       }
     },
     {
@@ -100,7 +252,48 @@
           "High-protein Greek yogurt cup"
         ],
         "proteinG": "~40–45g",
-        "groceries": []
+        "groceries": [],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 5,
+          "ingredients": [
+            {
+              "qty": "2 cans or pouches",
+              "name": "Tuna"
+            },
+            {
+              "qty": "1, sliced",
+              "name": "Avocado"
+            },
+            {
+              "qty": "a handful each",
+              "name": "Crackers"
+            },
+            {
+              "qty": "2",
+              "name": "High-protein Greek yogurt cups"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt, pepper, lemon or hot sauce",
+              "note": "optional"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Drain the tuna. Eat it straight, or mix in a spoonful of plain Greek yogurt, salt, and pepper for a quick tuna salad."
+            },
+            {
+              "text": "Slice the avocado and sprinkle with salt (and a squeeze of lemon if you have one open)."
+            },
+            {
+              "text": "Pack with crackers and a yogurt cup."
+            }
+          ],
+          "tips": [
+            "Pick an avocado that gives slightly when pressed; save the firmer ones for Monday and Wednesday."
+          ]
+        }
       },
       "dinner": {
         "title": "Filet mignon",
@@ -134,7 +327,142 @@
             "name": "Garlic, butter",
             "have": true
           }
-        ]
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 15,
+          "cookMinutes": 35,
+          "ingredients": [
+            {
+              "qty": "2 × 8 oz, 1½\" thick",
+              "name": "Filet mignon",
+              "group": "Steak"
+            },
+            {
+              "qty": "generous",
+              "name": "Kosher salt and pepper",
+              "group": "Steak"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "High-heat oil",
+              "note": "avocado or vegetable",
+              "group": "Steak"
+            },
+            {
+              "qty": "2 tbsp",
+              "name": "Butter",
+              "group": "Steak"
+            },
+            {
+              "qty": "2 cloves, smashed",
+              "name": "Garlic",
+              "group": "Steak"
+            },
+            {
+              "qty": "2 lb, halved or quartered",
+              "name": "Yukon gold potatoes",
+              "group": "Potatoes"
+            },
+            {
+              "qty": "3 tbsp",
+              "name": "Butter",
+              "group": "Potatoes"
+            },
+            {
+              "qty": "3 cloves, minced",
+              "name": "Garlic",
+              "group": "Potatoes"
+            },
+            {
+              "qty": "¼ cup",
+              "name": "Milk or Greek yogurt",
+              "group": "Potatoes"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt and pepper",
+              "group": "Potatoes"
+            },
+            {
+              "qty": "1 lb, trimmed",
+              "name": "Green beans",
+              "group": "Green beans"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Olive oil",
+              "group": "Green beans"
+            },
+            {
+              "qty": "1 clove, minced",
+              "name": "Garlic",
+              "group": "Green beans"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt",
+              "group": "Green beans"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Start",
+              "text": "Take the filets out of the fridge 30–45 minutes before cooking. Pat dry and salt all over."
+            },
+            {
+              "group": "Potatoes",
+              "text": "Cover the potatoes with cold salted water, bring to a boil, and cook until a fork slides in easily.",
+              "minutes": 18
+            },
+            {
+              "group": "Start",
+              "text": "Heat the oven to 400°F."
+            },
+            {
+              "group": "Steak",
+              "text": "Heat a cast-iron or oven-safe skillet over high until it just smokes. Add the oil, then the filets. Sear without moving.",
+              "minutes": 3
+            },
+            {
+              "group": "Steak",
+              "text": "Flip and sear the second side. Hold each filet on its edge for 30 seconds to brown the sides too.",
+              "minutes": 3
+            },
+            {
+              "group": "Steak",
+              "text": "Add the butter and smashed garlic. Tilt the pan and spoon the foaming butter over the steaks.",
+              "minutes": 1
+            },
+            {
+              "group": "Steak",
+              "text": "Move the skillet to the oven until the center reads 125°F for medium-rare (130°F medium).",
+              "minutes": 6
+            },
+            {
+              "group": "Steak",
+              "text": "Rest the steaks on a plate, loosely tented with foil. They'll rise about 5°F.",
+              "minutes": 8
+            },
+            {
+              "group": "Potatoes",
+              "text": "While the steak cooks, drain the potatoes and return to the pot. Add the butter, garlic, milk or yogurt, salt, and pepper, and smash to your liking."
+            },
+            {
+              "group": "Green beans",
+              "text": "Sauté the green beans in oil over medium-high, tossing, until bright and blistered. Add the garlic for the last 30 seconds and salt.",
+              "minutes": 7
+            },
+            {
+              "group": "Serve",
+              "text": "Plate everything and spoon the garlic butter from the skillet over the steaks."
+            }
+          ],
+          "tips": [
+            "An instant-read thermometer is the difference between perfect and overcooked on a filet.",
+            "Skillet handle comes out of the oven very hot. Leave a towel on it."
+          ]
+        }
       }
     },
     {
@@ -168,7 +496,45 @@
             "name": "String cheese",
             "qty": "1 pack"
           }
-        ]
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 5,
+          "ingredients": [
+            {
+              "qty": "4 slices",
+              "name": "Whole-grain bread"
+            },
+            {
+              "qty": "about 4 oz per sandwich",
+              "name": "Deli turkey"
+            },
+            {
+              "qty": "2 slices",
+              "name": "Sliced cheese"
+            },
+            {
+              "qty": "to taste",
+              "name": "Mustard, mayo, or Greek yogurt",
+              "note": "optional"
+            },
+            {
+              "qty": "2",
+              "name": "String cheese"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Layer turkey and cheese on the bread with whatever spread you like."
+            },
+            {
+              "text": "Cut in half and pack with a string cheese."
+            }
+          ],
+          "tips": [
+            "Pile on 4 oz of turkey per sandwich to hit ~40g protein."
+          ]
+        }
       },
       "dinner": {
         "title": "Homemade beef chili",
@@ -241,7 +607,104 @@
             "name": "Cinnamon rolls",
             "qty": "1 tube"
           }
-        ]
+        ],
+        "recipe": {
+          "servings": 6,
+          "prepMinutes": 15,
+          "cookMinutes": 45,
+          "ingredients": [
+            {
+              "qty": "1.5 lb",
+              "name": "93% lean ground beef",
+              "group": "Chili"
+            },
+            {
+              "qty": "1, diced",
+              "name": "Yellow onion",
+              "group": "Chili"
+            },
+            {
+              "qty": "1, seeded and minced",
+              "name": "Jalapeño",
+              "note": "keep the seeds for more heat",
+              "group": "Chili"
+            },
+            {
+              "qty": "1",
+              "name": "Chili seasoning packet",
+              "group": "Chili"
+            },
+            {
+              "qty": "46 oz",
+              "name": "Tomato juice",
+              "group": "Chili"
+            },
+            {
+              "qty": "1 can, drained and rinsed",
+              "name": "Pinto beans",
+              "group": "Chili"
+            },
+            {
+              "qty": "1 can, drained and rinsed",
+              "name": "Kidney beans",
+              "group": "Chili"
+            },
+            {
+              "qty": "1 can, drained and rinsed",
+              "name": "Black beans",
+              "group": "Chili"
+            },
+            {
+              "qty": "for topping",
+              "name": "Shredded cheddar",
+              "group": "To serve"
+            },
+            {
+              "qty": "for topping",
+              "name": "Oyster crackers",
+              "group": "To serve"
+            },
+            {
+              "qty": "1 tube",
+              "name": "Cinnamon rolls",
+              "group": "To serve"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Chili",
+              "text": "Brown the beef with the onion and jalapeño in a large pot over medium-high, breaking it up, until no pink remains and the onion is soft.",
+              "minutes": 10
+            },
+            {
+              "group": "Chili",
+              "text": "Stir in the chili seasoning and cook 1 minute so the spices bloom.",
+              "minutes": 1
+            },
+            {
+              "group": "Chili",
+              "text": "Add the tomato juice and all three cans of beans. Bring to a boil."
+            },
+            {
+              "group": "Chili",
+              "text": "Lower to a gentle simmer, partly covered, stirring now and then. Longer is better; it thickens as it goes.",
+              "minutes": 30
+            },
+            {
+              "group": "Cinnamon rolls",
+              "text": "For the last 20 minutes, bake the cinnamon rolls according to the package.",
+              "minutes": 15
+            },
+            {
+              "group": "Serve",
+              "text": "Taste the chili and add salt if needed. Ladle into bowls and top with cheddar and oyster crackers. Cinnamon rolls on the side."
+            }
+          ],
+          "tips": [
+            "This is your family recipe's lineup; adjust amounts to how you usually make it.",
+            "Makes about 6 servings. Leftovers keep 4 days in the fridge and make a backup lunch."
+          ]
+        }
       }
     },
     {
@@ -253,7 +716,45 @@
           "String cheese"
         ],
         "proteinG": "~40–45g",
-        "groceries": []
+        "groceries": [],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 5,
+          "ingredients": [
+            {
+              "qty": "4 slices",
+              "name": "Whole-grain bread"
+            },
+            {
+              "qty": "about 4 oz per sandwich",
+              "name": "Deli turkey"
+            },
+            {
+              "qty": "2 slices",
+              "name": "Sliced cheese"
+            },
+            {
+              "qty": "to taste",
+              "name": "Mustard, mayo, or Greek yogurt",
+              "note": "optional"
+            },
+            {
+              "qty": "2",
+              "name": "String cheese"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Layer turkey and cheese on the bread with whatever spread you like."
+            },
+            {
+              "text": "Cut in half and pack with a string cheese."
+            }
+          ],
+          "tips": [
+            "Pile on 4 oz of turkey per sandwich to hit ~40g protein."
+          ]
+        }
       },
       "dinner": {
         "title": "Greek chicken thighs",
@@ -311,7 +812,141 @@
             "name": "Lemon, garlic",
             "have": true
           }
-        ]
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 20,
+          "cookMinutes": 25,
+          "ingredients": [
+            {
+              "qty": "1.5 lb",
+              "name": "Boneless chicken thighs",
+              "group": "Chicken"
+            },
+            {
+              "qty": "2 tbsp",
+              "name": "Olive oil",
+              "group": "Chicken"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Greek seasoning",
+              "group": "Chicken"
+            },
+            {
+              "qty": "½ lemon",
+              "name": "Lemon juice",
+              "group": "Chicken"
+            },
+            {
+              "qty": "2 cloves, minced",
+              "name": "Garlic",
+              "group": "Chicken"
+            },
+            {
+              "qty": "½ tsp",
+              "name": "Salt",
+              "group": "Chicken"
+            },
+            {
+              "qty": "1 cup",
+              "name": "Plain Greek yogurt",
+              "group": "Tzatziki"
+            },
+            {
+              "qty": "½, grated",
+              "name": "Cucumber",
+              "group": "Tzatziki"
+            },
+            {
+              "qty": "1 clove, grated",
+              "name": "Garlic",
+              "group": "Tzatziki"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Lemon juice",
+              "group": "Tzatziki"
+            },
+            {
+              "qty": "pinch",
+              "name": "Salt",
+              "group": "Tzatziki"
+            },
+            {
+              "qty": "1½, diced",
+              "name": "Cucumber",
+              "group": "Salad"
+            },
+            {
+              "qty": "1 pint, halved",
+              "name": "Cherry tomatoes",
+              "group": "Salad"
+            },
+            {
+              "qty": "2 oz, crumbled",
+              "name": "Feta",
+              "group": "Salad"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Olive oil",
+              "group": "Salad"
+            },
+            {
+              "qty": "½ lemon",
+              "name": "Lemon juice",
+              "group": "Salad"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt, pepper, pinch of Greek seasoning",
+              "group": "Salad"
+            },
+            {
+              "qty": "2–4",
+              "name": "Pita",
+              "group": "To serve"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Chicken",
+              "text": "Toss the chicken with the oil, Greek seasoning, lemon juice, garlic, and salt. Let it sit at least 15 minutes (or all afternoon in the fridge).",
+              "minutes": 15
+            },
+            {
+              "group": "Start",
+              "text": "Heat the oven to 425°F."
+            },
+            {
+              "group": "Tzatziki",
+              "text": "Grate the cucumber, squeeze it hard in a towel to remove the water, then stir it into the yogurt with the garlic, lemon, and salt. Chill."
+            },
+            {
+              "group": "Chicken",
+              "text": "Spread the chicken on a sheet pan and roast until browned and 175°F inside.",
+              "minutes": 22
+            },
+            {
+              "group": "Salad",
+              "text": "Toss the diced cucumber, tomatoes, and feta with oil, lemon, salt, pepper, and a pinch of Greek seasoning."
+            },
+            {
+              "group": "To serve",
+              "text": "Warm the pita in the oven for the last 3 minutes.",
+              "minutes": 3
+            },
+            {
+              "group": "Serve",
+              "text": "Slice the chicken and serve with tzatziki, salad, and warm pita."
+            }
+          ],
+          "tips": [
+            "Squeezing the cucumber keeps the tzatziki thick instead of watery.",
+            "For char, finish the chicken under the broiler for 2 minutes."
+          ]
+        }
       }
     },
     {
@@ -347,7 +982,42 @@
             "name": "Meat sticks or jerky",
             "qty": "4"
           }
-        ]
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 5,
+          "ingredients": [
+            {
+              "qty": "6",
+              "name": "Hard-boiled eggs"
+            },
+            {
+              "qty": "2",
+              "name": "Cottage cheese cups"
+            },
+            {
+              "qty": "1, sliced",
+              "name": "Avocado"
+            },
+            {
+              "qty": "2",
+              "name": "Meat sticks or jerky"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt, pepper, everything seasoning",
+              "note": "optional"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Halve the eggs and season with salt and pepper (everything bagel seasoning is great here)."
+            },
+            {
+              "text": "Slice the avocado and pack with a cottage cheese cup and a meat stick."
+            }
+          ]
+        }
       },
       "dinner": {
         "title": "Chicken burrito bowls",
@@ -414,7 +1084,132 @@
             "name": "Rice, cheddar, Greek yogurt",
             "have": true
           }
-        ]
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 15,
+          "cookMinutes": 25,
+          "ingredients": [
+            {
+              "qty": "2 lb",
+              "name": "Chicken breast",
+              "note": "half is for Wednesday's lunch",
+              "group": "Chicken"
+            },
+            {
+              "qty": "2 tbsp",
+              "name": "Taco seasoning",
+              "group": "Chicken"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Olive oil",
+              "group": "Chicken"
+            },
+            {
+              "qty": "1 cup dry",
+              "name": "Jasmine rice",
+              "group": "Cilantro-lime rice"
+            },
+            {
+              "qty": "1¼ cups",
+              "name": "Water",
+              "group": "Cilantro-lime rice"
+            },
+            {
+              "qty": "1 lime",
+              "name": "Lime juice",
+              "group": "Cilantro-lime rice"
+            },
+            {
+              "qty": "¼ cup, chopped",
+              "name": "Cilantro",
+              "group": "Cilantro-lime rice"
+            },
+            {
+              "qty": "1 can, drained",
+              "name": "Black beans",
+              "group": "Toppings"
+            },
+            {
+              "qty": "1½ cups",
+              "name": "Frozen corn",
+              "group": "Toppings"
+            },
+            {
+              "qty": "1, diced",
+              "name": "Yellow onion",
+              "group": "Toppings"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salsa",
+              "group": "Toppings"
+            },
+            {
+              "qty": "½ cup",
+              "name": "Shredded cheddar",
+              "group": "Toppings"
+            },
+            {
+              "qty": "½ cup",
+              "name": "Plain Greek yogurt",
+              "group": "Yogurt-lime sauce"
+            },
+            {
+              "qty": "1 lime",
+              "name": "Lime juice",
+              "group": "Yogurt-lime sauce"
+            },
+            {
+              "qty": "pinch",
+              "name": "Salt",
+              "group": "Yogurt-lime sauce"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Cilantro-lime rice",
+              "text": "Start the rice: boil with the water and a pinch of salt, cover, and cook on low.",
+              "minutes": 15
+            },
+            {
+              "group": "Chicken",
+              "text": "Pound or butterfly the chicken breasts to an even ¾\" so they cook evenly. Rub with oil and taco seasoning."
+            },
+            {
+              "group": "Chicken",
+              "text": "Cook in a hot skillet over medium-high until 165°F inside, flipping once.",
+              "minutes": 12
+            },
+            {
+              "group": "Chicken",
+              "text": "Rest the chicken 5 minutes, then slice. Put half in a container in the fridge for Wednesday's wraps.",
+              "minutes": 5
+            },
+            {
+              "group": "Toppings",
+              "text": "In the same skillet, cook the onion and corn until the corn gets a little char.",
+              "minutes": 6
+            },
+            {
+              "group": "Toppings",
+              "text": "Warm the black beans in a small pot or the microwave with a pinch of taco seasoning."
+            },
+            {
+              "group": "Yogurt-lime sauce",
+              "text": "Stir the yogurt, lime juice, and salt together, adding a splash of water to thin it to drizzling."
+            },
+            {
+              "group": "Cilantro-lime rice",
+              "text": "Fluff the rice with the lime juice and cilantro."
+            },
+            {
+              "group": "Serve",
+              "text": "Build the bowls: rice, chicken, beans, corn, salsa, cheddar, and a drizzle of the sauce."
+            }
+          ]
+        }
       }
     },
     {
@@ -428,7 +1223,42 @@
           "Meat stick"
         ],
         "proteinG": "~40g",
-        "groceries": []
+        "groceries": [],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 5,
+          "ingredients": [
+            {
+              "qty": "6",
+              "name": "Hard-boiled eggs"
+            },
+            {
+              "qty": "2",
+              "name": "Cottage cheese cups"
+            },
+            {
+              "qty": "1, sliced",
+              "name": "Avocado"
+            },
+            {
+              "qty": "2",
+              "name": "Meat sticks or jerky"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt, pepper, everything seasoning",
+              "note": "optional"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Halve the eggs and season with salt and pepper (everything bagel seasoning is great here)."
+            },
+            {
+              "text": "Slice the avocado and pack with a cottage cheese cup and a meat stick."
+            }
+          ]
+        }
       },
       "dinner": {
         "title": "Shrimp stir-fry",
@@ -480,7 +1310,119 @@
             "name": "Rice, garlic",
             "have": true
           }
-        ]
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 15,
+          "cookMinutes": 15,
+          "ingredients": [
+            {
+              "qty": "1 lb, peeled and deveined",
+              "name": "Raw shrimp",
+              "note": "thawed and patted dry",
+              "group": "Stir-fry"
+            },
+            {
+              "qty": "1 crown, small florets",
+              "name": "Broccoli",
+              "group": "Stir-fry"
+            },
+            {
+              "qty": "2, sliced",
+              "name": "Bell peppers",
+              "group": "Stir-fry"
+            },
+            {
+              "qty": "8 oz",
+              "name": "Snap peas",
+              "group": "Stir-fry"
+            },
+            {
+              "qty": "3 cloves, minced",
+              "name": "Garlic",
+              "group": "Stir-fry"
+            },
+            {
+              "qty": "3, sliced",
+              "name": "Green onions",
+              "group": "Stir-fry"
+            },
+            {
+              "qty": "2 tbsp",
+              "name": "High-heat oil",
+              "group": "Stir-fry"
+            },
+            {
+              "qty": "3 tbsp",
+              "name": "Soy sauce",
+              "group": "Sauce"
+            },
+            {
+              "qty": "2 tbsp",
+              "name": "Water",
+              "group": "Sauce"
+            },
+            {
+              "qty": "1 tsp",
+              "name": "Cornstarch",
+              "group": "Sauce"
+            },
+            {
+              "qty": "1 tsp",
+              "name": "Honey or sugar",
+              "note": "optional",
+              "group": "Sauce"
+            },
+            {
+              "qty": "1 cup dry",
+              "name": "Jasmine rice",
+              "group": "Rice"
+            },
+            {
+              "qty": "1¼ cups",
+              "name": "Water",
+              "group": "Rice"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Rice",
+              "text": "Start the rice the same way as Monday.",
+              "minutes": 15
+            },
+            {
+              "group": "Prep",
+              "text": "If the shrimp are still frozen, put them in a bowl of cold water.",
+              "minutes": 15
+            },
+            {
+              "group": "Prep",
+              "text": "Whisk the sauce ingredients together. Have everything chopped before you turn on the heat; this goes fast."
+            },
+            {
+              "group": "Stir-fry",
+              "text": "Heat 1 tbsp oil in a large skillet or wok over high. Add the shrimp in one layer and cook until pink, flipping once. Remove to a plate.",
+              "minutes": 3
+            },
+            {
+              "group": "Stir-fry",
+              "text": "Add the remaining oil and the broccoli. Stir-fry 3 minutes, then add the peppers and snap peas for 2–3 more.",
+              "minutes": 6
+            },
+            {
+              "group": "Stir-fry",
+              "text": "Add the garlic for 30 seconds, then the shrimp and the sauce. Toss until glossy and thickened.",
+              "minutes": 1
+            },
+            {
+              "group": "Serve",
+              "text": "Top with green onions and serve over rice."
+            }
+          ],
+          "tips": [
+            "Shrimp go from perfect to rubbery fast. Pull them as soon as they turn opaque and curl into a C."
+          ]
+        }
       }
     },
     {
@@ -509,7 +1451,47 @@
             "name": "Cooked chicken from Monday, cheddar",
             "have": true
           }
-        ]
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 5,
+          "cookMinutes": 2,
+          "ingredients": [
+            {
+              "qty": "2",
+              "name": "Large tortillas"
+            },
+            {
+              "qty": "about 1 lb",
+              "name": "Sliced chicken from Monday"
+            },
+            {
+              "qty": "1, sliced",
+              "name": "Avocado"
+            },
+            {
+              "qty": "½ cup",
+              "name": "Shredded cheddar"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salsa",
+              "note": "optional"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Warm the tortillas for 20 seconds in the microwave (or a dry skillet) so they don't crack."
+            },
+            {
+              "text": "Fill with chicken, avocado, cheddar, and salsa. Fold in the sides and roll tight."
+            },
+            {
+              "text": "Optional: toast seam-side down in a dry skillet 1–2 minutes per side.",
+              "minutes": 3
+            }
+          ]
+        }
       },
       "dinner": {
         "title": "Ground beef & sweet potato skillet",
@@ -550,7 +1532,103 @@
             "name": "Cheddar, garlic",
             "have": true
           }
-        ]
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 15,
+          "cookMinutes": 30,
+          "ingredients": [
+            {
+              "qty": "3, cut into ¾\" cubes",
+              "name": "Sweet potatoes",
+              "group": "Sweet potatoes"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Olive oil",
+              "group": "Sweet potatoes"
+            },
+            {
+              "qty": "½ tsp",
+              "name": "Salt",
+              "group": "Sweet potatoes"
+            },
+            {
+              "qty": "1 lb, halved",
+              "name": "Brussels sprouts",
+              "group": "Brussels sprouts"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Olive oil",
+              "group": "Brussels sprouts"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt and pepper",
+              "group": "Brussels sprouts"
+            },
+            {
+              "qty": "1.25 lb",
+              "name": "93% lean ground beef",
+              "group": "Skillet"
+            },
+            {
+              "qty": "1, diced",
+              "name": "Yellow onion",
+              "group": "Skillet"
+            },
+            {
+              "qty": "3 cloves, minced",
+              "name": "Garlic",
+              "group": "Skillet"
+            },
+            {
+              "qty": "1½ tbsp",
+              "name": "Taco seasoning",
+              "note": "or chili powder + cumin + salt",
+              "group": "Skillet"
+            },
+            {
+              "qty": "1 cup",
+              "name": "Shredded cheddar",
+              "group": "Skillet"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Start",
+              "text": "Heat the oven to 425°F."
+            },
+            {
+              "group": "Roast",
+              "text": "Toss the sweet potatoes with oil and salt on one sheet pan, and the Brussels sprouts with oil, salt, and pepper on another (cut side down). Roast both, flipping the potatoes halfway, until browned and tender.",
+              "minutes": 25
+            },
+            {
+              "group": "Skillet",
+              "text": "Meanwhile, brown the beef and onion in a large oven-safe skillet over medium-high.",
+              "minutes": 8
+            },
+            {
+              "group": "Skillet",
+              "text": "Add the garlic and seasoning with a splash of water and stir 1 minute.",
+              "minutes": 1
+            },
+            {
+              "group": "Skillet",
+              "text": "Fold the roasted sweet potatoes into the beef. Top with cheddar, cover (or slide under the broiler) until melted.",
+              "minutes": 2
+            },
+            {
+              "group": "Serve",
+              "text": "Serve with the Brussels sprouts on the side."
+            }
+          ],
+          "tips": [
+            "Don't crowd the sheet pans. Space is what makes them brown instead of steam."
+          ]
+        }
       }
     }
   ],

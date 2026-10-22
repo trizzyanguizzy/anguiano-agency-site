@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { MealsNav } from '@/components/meals/MealsNav';
 import { MealCard } from '@/components/meals/MealCard';
 import { getCurrentWeek, getDay } from '@/lib/meals/plan';
@@ -28,8 +29,14 @@ export default function MealsHome() {
 
       {day ? (
         <div className="flex flex-col gap-3">
-          <MealCard label="Lunch · 11:00" meal={day.lunch} />
-          <MealCard label="Dinner · 5–6" meal={day.dinner} note={day.dinner?.startCookingNote} emphasis />
+          <MealCard label="Lunch · 11:00" meal={day.lunch} href={`/meals/${today}/lunch`} />
+          <MealCard
+            label="Dinner · 5–6"
+            meal={day.dinner}
+            note={day.dinner?.startCookingNote}
+            href={`/meals/${today}/dinner`}
+            emphasis
+          />
           {tonight.length > 0 && (
             <section className="rounded-2xl border border-border-subtle bg-background-tertiary p-4">
               <p className="text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">Tonight</p>
@@ -58,12 +65,26 @@ export default function MealsHome() {
           <h2 className="mb-3 text-lg font-semibold">Coming up</h2>
           <ul className="divide-y divide-border-subtle rounded-2xl border border-border-subtle bg-background-secondary">
             {upcoming.map((d) => (
-              <li key={d.date} className="px-4 py-3">
-                <p className="text-sm font-medium text-foreground-tertiary">
-                  {weekdayName(d.date)} · {shortDate(d.date)}
-                </p>
-                <p className="mt-0.5 font-medium">{d.dinner?.title ?? 'No dinner planned'}</p>
-                {d.lunch && <p className="text-sm text-foreground-secondary">Lunch: {d.lunch.title}</p>}
+              <li key={d.date}>
+                <Link href={`/meals/${d.date}/dinner`} className="block px-4 pb-1 pt-3 active:bg-background-tertiary">
+                  <p className="text-sm font-medium text-foreground-tertiary">
+                    {weekdayName(d.date)} · {shortDate(d.date)}
+                  </p>
+                  <p className="mt-0.5 font-medium">
+                    {d.dinner?.title ?? 'No dinner planned'}
+                    {d.dinner?.recipe && <span className="ml-1 text-accent-orange-light">›</span>}
+                  </p>
+                </Link>
+                {d.lunch ? (
+                  <Link
+                    href={`/meals/${d.date}/lunch`}
+                    className="block px-4 pb-3 text-sm text-foreground-secondary active:bg-background-tertiary"
+                  >
+                    Lunch: {d.lunch.title}
+                  </Link>
+                ) : (
+                  <div className="pb-3" />
+                )}
               </li>
             ))}
           </ul>

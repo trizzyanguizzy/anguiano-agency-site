@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { Meal } from '@/lib/meals/schema';
 
 export function MealCard({
@@ -5,20 +6,20 @@ export function MealCard({
   meal,
   note,
   emphasis = false,
+  href,
 }: {
   label: string;
   meal?: Meal;
   note?: string;
   emphasis?: boolean;
+  /** When set, the whole card links to the meal's recipe page. */
+  href?: string;
 }) {
-  return (
-    <section
-      className={
-        emphasis
-          ? 'rounded-2xl border border-accent-orange/40 bg-background-secondary p-4'
-          : 'rounded-2xl border border-border-subtle bg-background-secondary p-4'
-      }
-    >
+  const className = emphasis
+    ? 'block rounded-2xl border border-accent-orange/40 bg-background-secondary p-4'
+    : 'block rounded-2xl border border-border-subtle bg-background-secondary p-4';
+  const body = (
+    <>
       <div className="flex items-baseline justify-between gap-3">
         <p className="text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">{label}</p>
         {meal?.proteinG && <p className="text-xs font-medium text-accent-orange-light">{meal.proteinG} protein</p>}
@@ -34,6 +35,16 @@ export function MealCard({
       ) : (
         <p className="mt-1 text-foreground-tertiary">Nothing planned</p>
       )}
-    </section>
+      {href && meal?.recipe && (
+        <p className="mt-3 text-sm font-medium text-accent-orange-light">View recipe →</p>
+      )}
+    </>
+  );
+  return href && meal ? (
+    <Link href={href} className={`${className} transition-colors active:bg-background-tertiary`}>
+      {body}
+    </Link>
+  ) : (
+    <section className={className}>{body}</section>
   );
 }

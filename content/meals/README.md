@@ -42,6 +42,24 @@ One JSON file per week, named for the plan's first day: `YYYY-MM-DD.json`. Regis
 }
 ```
 
+### Recipes (optional, on any lunch or dinner)
+Tapping a meal opens `/meals/<date>/<lunch|dinner>` with its recipe. Add a `recipe` to the meal:
+
+```jsonc
+"recipe": {
+  "servings": 2, "prepMinutes": 15, "cookMinutes": 35,
+  "ingredients": [
+    { "qty": "2 × 8 oz", "name": "Filet mignon", "group": "Steak" },
+    { "qty": "to taste", "name": "Salt and pepper", "group": "Steak", "note": "kosher" }
+  ],
+  "steps": [
+    { "group": "Steak", "text": "Sear without moving.", "minutes": 3 }
+  ],
+  "tips": ["Use an instant-read thermometer."]
+}
+```
+`group` puts ingredients or steps under a sub-heading; consecutive items with the same group render together. Numeric amounts (`2 tbsp`) show before the name; words (`to taste`) show after it.
+
 Rules:
 - Grocery `id`s must be unique across the whole week (they're the checkbox keys).
 - List each grocery item under the **first** meal that uses it; later meals that reuse it get a `"have": true` line.

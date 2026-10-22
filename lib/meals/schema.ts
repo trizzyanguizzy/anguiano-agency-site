@@ -10,11 +10,37 @@ export const GroceryItem = z.object({
   have: z.boolean().optional(),
 });
 
+export const Ingredient = z.object({
+  qty: z.string().optional(),
+  name: z.string().min(1),
+  note: z.string().optional(),
+  /** Optional sub-heading, e.g. "Tzatziki". Consecutive ingredients with the same group render together. */
+  group: z.string().optional(),
+});
+
+export const Step = z.object({
+  /** Optional sub-heading, e.g. "Potatoes". */
+  group: z.string().optional(),
+  text: z.string().min(1),
+  /** Shown as a timer hint next to the step. */
+  minutes: z.number().positive().optional(),
+});
+
+export const Recipe = z.object({
+  servings: z.number().int().positive().optional(),
+  prepMinutes: z.number().int().nonnegative().optional(),
+  cookMinutes: z.number().int().nonnegative().optional(),
+  ingredients: z.array(Ingredient).default([]),
+  steps: z.array(Step).min(1),
+  tips: z.array(z.string()).default([]),
+});
+
 export const Meal = z.object({
   title: z.string().min(1),
   items: z.array(z.string()).default([]),
   proteinG: z.string().optional(),
   groceries: z.array(GroceryItem).default([]),
+  recipe: Recipe.optional(),
 });
 
 export const Dinner = Meal.extend({
@@ -55,6 +81,9 @@ export const WeekPlan = z
 
 export type GroceryItem = z.infer<typeof GroceryItem>;
 export type Meal = z.infer<typeof Meal>;
+export type Recipe = z.infer<typeof Recipe>;
+export type Ingredient = z.infer<typeof Ingredient>;
+export type Step = z.infer<typeof Step>;
 export type Dinner = z.infer<typeof Dinner>;
 export type Day = z.infer<typeof Day>;
 export type WeekPlan = z.infer<typeof WeekPlan>;
