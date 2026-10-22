@@ -47,11 +47,13 @@ Rules:
 - List each grocery item under the **first** meal that uses it; later meals that reuse it get a `"have": true` line.
 - A day can skip `lunch` or `dinner`.
 
-## Reminders (America/Chicago)
-| Time | What |
+## Reminders (each phone's local time)
+| Window | What |
 |---|---|
-| 10:00–10:59 | Today's lunch |
-| 3:00–3:59 pm | Tonight's dinner + `startCookingNote` |
-| 8:00–8:59 pm | Tomorrow's `fromFreezer` + today's `prepTonight`. Skipped if both are empty. If tomorrow has no plan, it says to plan next week. |
+| 11:00–11:59 | Today's lunch |
+| 5:00–5:59 pm | Tonight's dinner + `startCookingNote` |
+| 9:00–9:59 pm | Tomorrow's `fromFreezer` + today's `prepTonight`. Skipped if both are empty. If tomorrow has no plan, it says to plan next week. |
 
-The windows are an hour wide because the site is on Vercel Hobby, whose cron jobs fire anywhere within the scheduled hour.
+Each phone reports its time zone whenever the app is opened, so the windows follow you when you travel (a phone in Denver gets lunch at 11 Mountain). Phones that haven't reported a zone use Central.
+
+The windows are an hour wide because the site is on Vercel Hobby: `vercel.json` runs one once-a-day job per UTC hour (`tick-00`…`tick-23`), and Hobby fires each somewhere within its hour.

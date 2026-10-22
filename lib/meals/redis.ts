@@ -23,6 +23,6 @@ export function requireRedis(): Redis {
 export const keys = {
   subs: 'meals:subs',
   grocery: (weekId: string) => `meals:grocery:${weekId}`,
-  sent: (slot: string, date: string) => `meals:sent:${slot}:${date}`,
+  sent: (slot: string, deviceId: string, date: string) => `meals:sent:${slot}:${deviceId}:${date}`,
   login: (ip: string) => `meals:login:${ip}`,
 };

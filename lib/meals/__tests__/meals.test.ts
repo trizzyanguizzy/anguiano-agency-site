@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import seed from '@/content/meals/2026-10-22.json';
 import { WeekPlan } from '../schema';
-import { addDays, chicagoDate, chicagoHour } from '../time';
+import { addDays, chicagoDate, chicagoHour, localHour } from '../time';
+import { deviceTimeZone, dueReminders } from '../reminders';
 import { buildMessage, TARGET_HOUR } from '../messages';
 import { getDay, grocerySections } from '../plan';
 
@@ -33,24 +34,60 @@ describe('chicago time helpers', () => {
   });
 });
 
-describe('cron schedules', () => {
-  // Mirrors vercel.json: each slot has a CDT and a CST UTC hour. Exactly one should hit the target.
-  const schedules = { lunch: [15, 16], dinner: [20, 21], thaw: [1, 2] } as const;
-  const dates = { cdt: '2026-10-22', cst: '2026-11-05' };
+describe('per-device reminder schedule', () => {
+  const zones = ['America/Chicago', 'America/Denver', 'America/Los_Angeles', 'America/New_York', 'America/Phoenix'];
+  const targets = { lunch: 11, dinner: 17, thaw: 21 } as const;
 
-  for (const [slot, utcHours] of Object.entries(schedules)) {
-    for (const [zone, date] of Object.entries(dates)) {
-      it(`${slot} fires exactly once on a ${zone} day`, () => {
-        const hits = utcHours.filter((h) => {
-          // thaw runs after midnight UTC, i.e. the next UTC day
-          const utcDate = h < 12 ? addDays(date, 1) : date;
-          const t = new Date(`${utcDate}T${String(h).padStart(2, '0')}:20:00Z`);
-          return chicagoHour(t) === TARGET_HOUR[slot as keyof typeof TARGET_HOUR] && chicagoDate(t) === date;
-        });
-        expect(hits).toHaveLength(1);
+  it('targets lunch 11, dinner 5pm, freezer 9pm local', () => {
+    expect(TARGET_HOUR).toEqual(targets);
+  });
+
+  // vercel.json runs a tick at minute 0 of every UTC hour; Hobby may deliver it any time that hour.
+  for (const tz of zones) {
+    for (const date of ['2026-10-22', '2026-11-01', '2026-11-05', '2027-03-14']) {
+      it(`${tz} on ${date}: each reminder fires once, in its local hour`, () => {
+        const seen: Record<string, string[]> = { lunch: [], dinner: [], thaw: [] };
+        // Walk 24 UTC hours that cover the local day, at a jittered minute.
+        for (let h = 0; h < 30; h++) {
+          const now = new Date(Date.UTC(Number(date.slice(0, 4)), Number(date.slice(5, 7)) - 1, Number(date.slice(8)), h, 37));
+          for (const due of dueReminders(now, [{ id: 'd1', timeZone: tz }])) {
+            if (due.date !== date) continue;
+            expect(localHour(now, tz)).toBe(targets[due.slot]);
+            seen[due.slot].push(now.toISOString());
+          }
+        }
+        expect(seen.lunch).toHaveLength(1);
+        expect(seen.dinner).toHaveLength(1);
+        expect(seen.thaw).toHaveLength(1);
       });
     }
   }
+
+  it('sends to each device by its own clock', () => {
+    // 18:30 UTC on Oct 22 = 1:30pm Chicago, 12:30pm Denver, 11:30am Los Angeles.
+    const now = new Date('2026-10-22T18:30:00Z');
+    const due = dueReminders(now, [
+      { id: 'chi', timeZone: 'America/Chicago' },
+      { id: 'den', timeZone: 'America/Denver' },
+      { id: 'la', timeZone: 'America/Los_Angeles' },
+    ]);
+    expect(due).toEqual([{ deviceId: 'la', slot: 'lunch', date: '2026-10-22', timeZone: 'America/Los_Angeles' }]);
+  });
+
+  it('falls back to Central for devices with no or bad time zone', () => {
+    const now = new Date('2026-10-22T16:10:00Z'); // 11:10am CDT
+    expect(dueReminders(now, [{ id: 'a' }, { id: 'b', timeZone: 'Not/AZone' }]).map((d) => d.deviceId)).toEqual([
+      'a',
+      'b',
+    ]);
+    expect(deviceTimeZone({ timeZone: 'Not/AZone' })).toBe('America/Chicago');
+  });
+
+  it('uses the local date for the freezer reminder late at night', () => {
+    // 03:20 UTC Oct 23 = 9:20pm Oct 22 in Denver (MDT).
+    const [due] = dueReminders(new Date('2026-10-23T03:20:00Z'), [{ id: 'd', timeZone: 'America/Denver' }]);
+    expect(due).toMatchObject({ slot: 'thaw', date: '2026-10-22' });
+  });
 });
 
 describe('seed plan', () => {

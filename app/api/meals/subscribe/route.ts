@@ -4,10 +4,11 @@ import { getRedis } from '@/lib/meals/redis';
 import {
   listSubscriptions,
   removeSubscription,
-  renameSubscription,
   saveSubscription,
   subscriptionId,
+  updateSubscription,
 } from '@/lib/meals/push';
+import { isValidTimeZone } from '@/lib/meals/time';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -22,6 +23,7 @@ const PostBody = z.object({
   subscription: Subscription,
   label: z.string().trim().min(1).max(60).default('Phone'),
   replaces: z.string().url().optional(),
+  timeZone: z.string().refine(isValidTimeZone, 'unknown time zone').optional(),
 });
 
 function noStorage() {
@@ -33,7 +35,7 @@ export async function GET() {
   if (!getRedis()) return noStorage();
   const subs = await listSubscriptions();
   return NextResponse.json({
-    devices: subs.map((s) => ({ id: s.id, label: s.label, createdAt: s.createdAt })),
+    devices: subs.map((s) => ({ id: s.id, label: s.label, createdAt: s.createdAt, timeZone: s.timeZone ?? null })),
   });
 }
 
@@ -41,20 +43,31 @@ export async function POST(request: Request) {
   if (!getRedis()) return noStorage();
   const parsed = PostBody.safeParse(await request.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: 'bad subscription' }, { status: 400 });
-  const { subscription, label, replaces } = parsed.data;
+  const { subscription, label, replaces, timeZone } = parsed.data;
   if (replaces) await removeSubscription(await subscriptionId(replaces));
-  const id = await saveSubscription({ ...subscription, expirationTime: subscription.expirationTime ?? null }, label);
+  const id = await saveSubscription(
+    { ...subscription, expirationTime: subscription.expirationTime ?? null },
+    label,
+    timeZone
+  );
   return NextResponse.json({ id });
 }
 
-const PatchBody = z.object({ id: z.string().min(1), label: z.string().trim().min(1).max(60) });
+const PatchBody = z
+  .object({
+    id: z.string().min(1),
+    label: z.string().trim().min(1).max(60).optional(),
+    timeZone: z.string().refine(isValidTimeZone, 'unknown time zone').optional(),
+  })
+  .refine((b) => b.label !== undefined || b.timeZone !== undefined, 'nothing to update');
 
-/** Renames a device. */
+/** Renames a device and/or records the time zone it's in now. */
 export async function PATCH(request: Request) {
   if (!getRedis()) return noStorage();
   const parsed = PatchBody.safeParse(await request.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: 'bad request' }, { status: 400 });
-  const ok = await renameSubscription(parsed.data.id, parsed.data.label);
+  const { id, label, timeZone } = parsed.data;
+  const ok = await updateSubscription(id, { label, timeZone });
   return ok ? NextResponse.json({ ok: true }) : NextResponse.json({ error: 'not found' }, { status: 404 });
 }
 

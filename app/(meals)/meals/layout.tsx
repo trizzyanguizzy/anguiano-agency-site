@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { ServiceWorkerRegistrar } from '@/components/meals/ServiceWorkerRegistrar';
+import { TimeZoneSync } from '@/components/meals/TimeZoneSync';
 
 export const metadata: Metadata = {
   title: { absolute: 'Meals' },
@@ -32,6 +33,7 @@ export default function MealsLayout({ children }: { children: React.ReactNode })
       }}
     >
       <ServiceWorkerRegistrar />
+      <TimeZoneSync />
       {children}
     </div>
   );
