@@ -1,0 +1,58 @@
+import type { Day } from './schema';
+import type { PushPayload } from './push';
+
+export type Slot = 'lunch' | 'dinner' | 'thaw';
+
+/** Local America/Chicago hour each reminder is allowed to fire in. */
+export const TARGET_HOUR: Record<Slot, number> = { lunch: 10, dinner: 15, thaw: 20 };
+
+export const SLOTS: readonly Slot[] = ['lunch', 'dinner', 'thaw'];
+
+const join = (xs: string[]) => xs.filter(Boolean).join(', ');
+
+/**
+ * Pure: builds the notification for a slot, or null when there's nothing worth sending.
+ * `today` and `tomorrow` are the plan days for the local Chicago date (undefined = no plan).
+ */
+export function buildMessage(slot: Slot, today: Day | undefined, tomorrow: Day | undefined): PushPayload | null {
+  if (slot === 'lunch') {
+    const lunch = today?.lunch;
+    if (!lunch) return null;
+    return { title: `Lunch: ${lunch.title}`, body: join(lunch.items) || lunch.title, tag: 'lunch', url: '/meals' };
+  }
+
+  if (slot === 'dinner') {
+    const dinner = today?.dinner;
+    if (!dinner) return null;
+    const details = [join(dinner.items), dinner.proteinG ? `${dinner.proteinG} protein` : '']
+      .filter(Boolean)
+      .join(' · ');
+    const body = [details, dinner.startCookingNote].filter(Boolean).join('\n');
+    return { title: `Tonight: ${dinner.title}`, body: body || dinner.title, tag: 'dinner', url: '/meals' };
+  }
+
+  // thaw: tomorrow's freezer items + tonight's prep. Nag to plan if tomorrow is empty.
+  if (!tomorrow) {
+    return {
+      title: 'No meal plan for tomorrow',
+      body: 'Time to plan next week and add it to the site.',
+      tag: 'thaw',
+      url: '/meals',
+    };
+  }
+  const freezer = tomorrow.dinner?.fromFreezer ?? [];
+  const prep = today?.dinner?.prepTonight ?? [];
+  if (freezer.length === 0 && prep.length === 0) return null;
+
+  const lines: string[] = [];
+  if (freezer.length > 0) {
+    lines.push(`Move ${join(freezer)} to the fridge for tomorrow's ${tomorrow.dinner?.title ?? 'dinner'}.`);
+  }
+  lines.push(...prep);
+  return {
+    title: freezer.length > 0 ? 'Freezer → fridge tonight' : 'Prep for tomorrow',
+    body: lines.join('\n'),
+    tag: 'thaw',
+    url: '/meals',
+  };
+}
