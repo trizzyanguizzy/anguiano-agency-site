@@ -1,7 +1,13 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getRedis } from '@/lib/meals/redis';
-import { listSubscriptions, removeSubscription, saveSubscription, subscriptionId } from '@/lib/meals/push';
+import {
+  listSubscriptions,
+  removeSubscription,
+  renameSubscription,
+  saveSubscription,
+  subscriptionId,
+} from '@/lib/meals/push';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -39,6 +45,17 @@ export async function POST(request: Request) {
   if (replaces) await removeSubscription(await subscriptionId(replaces));
   const id = await saveSubscription({ ...subscription, expirationTime: subscription.expirationTime ?? null }, label);
   return NextResponse.json({ id });
+}
+
+const PatchBody = z.object({ id: z.string().min(1), label: z.string().trim().min(1).max(60) });
+
+/** Renames a device. */
+export async function PATCH(request: Request) {
+  if (!getRedis()) return noStorage();
+  const parsed = PatchBody.safeParse(await request.json().catch(() => null));
+  if (!parsed.success) return NextResponse.json({ error: 'bad request' }, { status: 400 });
+  const ok = await renameSubscription(parsed.data.id, parsed.data.label);
+  return ok ? NextResponse.json({ ok: true }) : NextResponse.json({ error: 'not found' }, { status: 404 });
 }
 
 const DeleteBody = z.union([z.object({ endpoint: z.string().url() }), z.object({ id: z.string().min(1) })]);

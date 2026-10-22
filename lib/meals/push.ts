@@ -37,6 +37,14 @@ export async function saveSubscription(subscription: PushSubscription, label: st
   return id;
 }
 
+export async function renameSubscription(id: string, label: string): Promise<boolean> {
+  const redis = requireRedis();
+  const current = await redis.hget<StoredSubscription>(keys.subs, id);
+  if (!current) return false;
+  await redis.hset(keys.subs, { [id]: { ...current, label } });
+  return true;
+}
+
 export async function removeSubscription(id: string) {
   await requireRedis().hdel(keys.subs, id);
 }
