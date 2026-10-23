@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-import { getRedis, keys } from '@/lib/meals/redis';
+import { getRedis, keys } from '@/lib/family/redis';
 import { weeks } from '@/lib/meals/plan';
 
 export const dynamic = 'force-dynamic';

@@ -1,5 +1,5 @@
 import { cache } from 'react';
-import { getRedis, keys } from './redis';
+import { getRedis, keys } from '../family/redis';
 import { weeks } from './plan';
 import type { WeekPlan } from './schema';
 import { applySwaps, normalize, type SwapMap } from './swaps';

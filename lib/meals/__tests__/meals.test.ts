@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import seed from '@/content/meals/2026-10-22.json';
 import { WeekPlan } from '../schema';
-import { addDays, chicagoDate, chicagoHour, localHour } from '../time';
+import { addDays, chicagoDate, chicagoHour, localHour } from '../../family/time';
 import { deviceTimeZone, dueReminders } from '../reminders';
 import { buildMessage, TARGET_HOUR } from '../messages';
 import { getDay, grocerySections } from '../plan';
@@ -154,9 +154,9 @@ describe('buildMessage', () => {
   });
 
   it('notifications open the matching recipe page', () => {
-    expect(buildMessage('lunch', day('2026-10-22'), day('2026-10-23'))?.url).toBe('/meals/2026-10-22/lunch');
-    expect(buildMessage('dinner', day('2026-10-23'), day('2026-10-24'))?.url).toBe('/meals/2026-10-23/dinner');
-    expect(buildMessage('thaw', day('2026-10-23'), day('2026-10-24'))?.url).toBe('/meals/2026-10-24/dinner');
+    expect(buildMessage('lunch', day('2026-10-22'), day('2026-10-23'))?.url).toBe('/family/meals/2026-10-22/lunch');
+    expect(buildMessage('dinner', day('2026-10-23'), day('2026-10-24'))?.url).toBe('/family/meals/2026-10-23/dinner');
+    expect(buildMessage('thaw', day('2026-10-23'), day('2026-10-24'))?.url).toBe('/family/meals/2026-10-24/dinner');
   });
 
   it('every meal in the seed week has a recipe with steps', () => {

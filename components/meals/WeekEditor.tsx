@@ -161,7 +161,7 @@ export function WeekEditor({
         <div className="flex flex-col gap-2">
           {rows.map((row) => (
             <div key={row.date} className="grid grid-cols-[3.25rem_1fr_1fr] items-stretch gap-2">
-              <div className={cn('flex flex-col justify-center px-1', row.isToday && 'text-accent-orange-light')}>
+              <div className={cn('flex flex-col justify-center px-1', row.isToday && 'text-accent-light')}>
                 <span className="text-sm font-semibold">{row.weekday}</span>
                 <span className="text-xs text-foreground-tertiary">{row.dayLabel}</span>
               </div>
@@ -281,9 +281,9 @@ function Chip({
     <div
       className={cn(
         'flex h-full min-h-[4.25rem] flex-col justify-center rounded-xl border bg-background-secondary px-3 py-2',
-        selected || highlight ? 'border-accent-orange bg-accent-orange/10' : 'border-border-subtle',
-        target && 'border-dashed border-accent-orange/60',
-        lifted && 'scale-105 border-accent-orange shadow-2xl shadow-black/60'
+        selected || highlight ? 'border-accent bg-accent/10' : 'border-border-subtle',
+        target && 'border-dashed border-accent/60',
+        lifted && 'scale-105 border-accent shadow-2xl shadow-black/60'
       )}
     >
       <span className={cn('line-clamp-2 text-sm font-medium leading-snug', !cell.title && 'text-foreground-tertiary')}>
@@ -291,7 +291,7 @@ function Chip({
       </span>
       <span className="mt-0.5 flex items-center gap-1.5 text-xs text-foreground-tertiary">
         {cell.proteinG && <span>{cell.proteinG}</span>}
-        {movedHere && <span className="text-accent-orange-light">moved</span>}
+        {movedHere && <span className="text-accent-light">moved</span>}
       </span>
     </div>
   );

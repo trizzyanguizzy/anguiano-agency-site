@@ -58,7 +58,7 @@ export function CookMode() {
       aria-pressed={on}
       className={
         on
-          ? 'flex w-full items-center justify-between rounded-2xl border border-accent-orange/50 bg-accent-orange/10 px-4 py-3 text-left'
+          ? 'flex w-full items-center justify-between rounded-2xl border border-accent/50 bg-accent/10 px-4 py-3 text-left'
           : 'flex w-full items-center justify-between rounded-2xl border border-border-subtle bg-background-secondary px-4 py-3 text-left'
       }
     >
@@ -70,7 +70,7 @@ export function CookMode() {
       </span>
       <span
         aria-hidden
-        className={`relative h-7 w-12 rounded-full transition-colors ${on ? 'bg-accent-orange' : 'bg-background-tertiary'}`}
+        className={`relative h-7 w-12 rounded-full transition-colors ${on ? 'bg-accent' : 'bg-background-tertiary'}`}
       >
         <span
           className={`absolute top-1 h-5 w-5 rounded-full bg-foreground-primary transition-transform ${on ? 'translate-x-6' : 'translate-x-1'}`}

@@ -20,6 +20,11 @@ const config: Config = {
           tertiary: '#787670',
         },
         accent: {
+          // Plain `accent` for the family app; `accent-orange` (actually green) for the portfolio.
+          DEFAULT: '#10B981',
+          hover: '#059669',
+          light: '#34D399',
+          dark: '#047857',
           orange: {
             DEFAULT: '#10B981',
             hover: '#059669',

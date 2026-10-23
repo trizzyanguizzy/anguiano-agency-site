@@ -1,6 +1,6 @@
 import { rawWeeks } from '@/content/meals';
 import { WeekPlan, type Day, type GroceryItem } from './schema';
-import { addDays, chicagoDate } from './time';
+import { addDays, chicagoDate } from '../family/time';
 
 function loadWeeks(): WeekPlan[] {
   return rawWeeks
