@@ -1,5 +1,5 @@
 import type { Day } from './schema';
-import type { PushPayload } from './push';
+import type { PushPayload } from '../family/push';
 
 export type Slot = 'lunch' | 'dinner' | 'thaw';
 
@@ -26,7 +26,7 @@ export function buildMessage(slot: Slot, today: Day | undefined, tomorrow: Day |
       title: `Lunch: ${lunch.title}`,
       body: join(lunch.items) || lunch.title,
       tag: 'lunch',
-      url: today ? `/meals/${today.date}/lunch` : '/meals',
+      url: today ? `/family/meals/${today.date}/lunch` : '/family/meals',
     };
   }
 
@@ -41,7 +41,7 @@ export function buildMessage(slot: Slot, today: Day | undefined, tomorrow: Day |
       title: `Tonight: ${dinner.title}`,
       body: body || dinner.title,
       tag: 'dinner',
-      url: today ? `/meals/${today.date}/dinner` : '/meals',
+      url: today ? `/family/meals/${today.date}/dinner` : '/family/meals',
     };
   }
 
@@ -51,7 +51,7 @@ export function buildMessage(slot: Slot, today: Day | undefined, tomorrow: Day |
       title: 'No meal plan for tomorrow',
       body: 'Time to plan next week and add it to the site.',
       tag: 'thaw',
-      url: '/meals',
+      url: '/family/meals',
     };
   }
   const freezer = tomorrow.dinner?.fromFreezer ?? [];
@@ -67,6 +67,6 @@ export function buildMessage(slot: Slot, today: Day | undefined, tomorrow: Day |
     title: freezer.length > 0 ? 'Freezer → fridge tonight' : 'Prep for tomorrow',
     body: lines.join('\n'),
     tag: 'thaw',
-    url: tomorrow.dinner ? `/meals/${tomorrow.date}/dinner` : '/meals',
+    url: tomorrow.dinner ? `/family/meals/${tomorrow.date}/dinner` : '/family/meals',
   };
 }

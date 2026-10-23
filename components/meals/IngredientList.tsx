@@ -49,7 +49,7 @@ export function IngredientList({ ingredients, storageKey }: { ingredients: Ingre
       {groups.map((group, gi) => (
         <div key={`${group.heading ?? 'all'}-${gi}`}>
           {group.heading && (
-            <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">
+            <h3 className="mb-1.5 text-sm font-medium text-foreground-tertiary">
               {group.heading}
             </h3>
           )}
@@ -68,7 +68,7 @@ export function IngredientList({ ingredients, storageKey }: { ingredients: Ingre
                       aria-hidden
                       className={cn(
                         'mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded border',
-                        done ? 'border-accent-orange bg-accent-orange text-background-primary' : 'border-border-emphasis'
+                        done ? 'border-accent bg-accent text-background-primary' : 'border-border-emphasis'
                       )}
                     >
                       {done && <span className="text-[10px] font-bold leading-none">✓</span>}

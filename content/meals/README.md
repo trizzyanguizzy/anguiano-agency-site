@@ -43,7 +43,7 @@ One JSON file per week, named for the plan's first day: `YYYY-MM-DD.json`. Regis
 ```
 
 ### Recipes (optional, on any lunch or dinner)
-Tapping a meal opens `/meals/<date>/<lunch|dinner>` with its recipe. Add a `recipe` to the meal:
+Tapping a meal opens `/family/meals/<date>/<lunch|dinner>` with its recipe. Add a `recipe` to the meal:
 
 ```jsonc
 "recipe": {

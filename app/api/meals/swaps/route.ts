@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getSwaps, saveSwaps } from '@/lib/meals/effective';
 import { weeks } from '@/lib/meals/plan';
-import { getRedis } from '@/lib/meals/redis';
+import { getRedis } from '@/lib/family/redis';
 import { swap, type Position } from '@/lib/meals/swaps';
 
 export const dynamic = 'force-dynamic';
