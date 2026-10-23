@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BellIcon, CartIcon, Logo, MealsIcon, SnowflakeIcon, SwapIcon } from '@/components/family/icons';
 import { getEffectiveWeeks } from '@/lib/meals/effective';
 import { getCurrentWeek, getDay, grocerySections } from '@/lib/meals/plan';
 import { getRedis, keys } from '@/lib/family/redis';
@@ -35,83 +36,104 @@ export default async function Home() {
 
   return (
     <main>
-      <header className="mb-6">
-        <p className="text-sm text-foreground-tertiary">
-          {weekdayName(today)}, {shortDate(today)}
-        </p>
-        <h1 className="text-3xl font-semibold">{greeting(chicagoHour())}</h1>
+      <header className="mb-7">
+        <div className="mb-5 flex items-center gap-3">
+          <Logo size={40} />
+          <p className="text-sm text-foreground-tertiary">
+            {weekdayName(today)}, {shortDate(today)}
+          </p>
+        </div>
+        <h1 className="text-[2.5rem]">{greeting(chicagoHour())}</h1>
       </header>
 
       <section aria-labelledby="today" className="mb-8">
-        <h2 id="today" className="mb-2 text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">
+        <h2 id="today" className="mb-2.5 text-sm font-medium text-foreground-tertiary">
           Today
         </h2>
         {day ? (
           <div className="grid grid-cols-2 gap-3">
             {(['lunch', 'dinner'] as const).map((slot) => {
               const meal = day[slot];
+              const isDinner = slot === 'dinner';
               return (
                 <Link
                   key={slot}
                   href={`/family/meals/${today}/${slot}`}
-                  className={`rounded-2xl border bg-background-secondary p-4 active:bg-background-tertiary ${
-                    slot === 'dinner' ? 'border-accent/40' : 'border-border-subtle'
+                  className={`flex min-h-[7.5rem] flex-col rounded-[1.1rem] border bg-background-secondary p-4 transition-colors active:bg-background-tertiary ${
+                    isDinner ? 'border-accent/70 ring-1 ring-inset ring-accent/40' : 'border-border-default'
                   }`}
                 >
-                  <p className="text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">
-                    {slot === 'lunch' ? 'Lunch · 11' : 'Dinner · 5–6'}
+                  <p className="text-[0.8125rem] text-foreground-tertiary">{isDinner ? 'Dinner at 5' : 'Lunch at 11'}</p>
+                  <p className="mt-1 text-[1.0625rem] font-semibold leading-snug text-foreground-primary">
+                    {meal?.title ?? 'Nothing planned'}
                   </p>
-                  <p className="mt-1 font-semibold leading-snug text-foreground-primary">{meal?.title ?? 'Nothing planned'}</p>
-                  {meal?.proteinG && <p className="mt-1 text-xs text-accent-light">{meal.proteinG} protein</p>}
+                  {meal?.proteinG && (
+                    <p className="mt-auto pt-2 text-[0.8125rem] text-accent-light">
+                      {meal.proteinG.replace(/^~/, '')} protein
+                    </p>
+                  )}
                 </Link>
               );
             })}
           </div>
         ) : (
-          <p className="rounded-2xl border border-border-subtle bg-background-secondary p-4 text-foreground-secondary">
+          <p className="rounded-[1.1rem] border border-border-default bg-background-secondary p-4 text-foreground-secondary">
             No meals planned for today.
           </p>
         )}
         {tonight.length > 0 && (
-          <div className="mt-3 rounded-2xl border border-border-subtle bg-background-tertiary p-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">Tonight</p>
-            <ul className="mt-1.5 space-y-1">
-              {tonight.map((t) => (
-                <li key={t}>🧊 {t}</li>
-              ))}
-            </ul>
+          <div className="mt-3 flex gap-3 rounded-[1.1rem] border border-brass/30 bg-brass/[0.07] p-4">
+            <SnowflakeIcon className="mt-0.5 h-5 w-5 shrink-0 text-brass" />
+            <div>
+              <p className="font-medium">Tonight</p>
+              <ul className="mt-0.5 space-y-0.5 text-foreground-secondary">
+                {tonight.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         )}
       </section>
 
       <section aria-labelledby="sections">
-        <h2 id="sections" className="mb-2 text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">
+        <h2 id="sections" className="mb-2.5 text-sm font-medium text-foreground-tertiary">
           Family
         </h2>
         <div className="grid grid-cols-2 gap-3">
-          <Tile href="/family/meals" emoji="🍽️" title="Meals" detail={week ? 'This week’s plan' : 'No plan yet'} />
+          <Tile href="/family/meals" icon={MealsIcon} title="Meals" detail={week ? 'This week’s plan' : 'No plan yet'} />
           <Tile
             href="/family/meals/groceries"
-            emoji="🛒"
+            icon={CartIcon}
             title="Groceries"
             detail={groceriesLeft === null ? 'Hy-Vee list' : groceriesLeft === 0 ? 'All bought' : `${groceriesLeft} to buy`}
           />
-          <Tile href="/family/meals/edit" emoji="⇅" title="Rearrange" detail="Swap meals between days" />
-          <Tile href="/family/settings" emoji="🔔" title="Reminders" detail="Notifications & devices" />
+          <Tile href="/family/meals/edit" icon={SwapIcon} title="Rearrange" detail="Swap meals between days" />
+          <Tile href="/family/settings" icon={BellIcon} title="Reminders" detail="Notifications and devices" />
         </div>
       </section>
     </main>
   );
 }
 
-function Tile({ href, emoji, title, detail }: { href: string; emoji: string; title: string; detail: string }) {
+function Tile({
+  href,
+  icon: Icon,
+  title,
+  detail,
+}: {
+  href: string;
+  icon: (p: React.SVGProps<SVGSVGElement>) => React.ReactNode;
+  title: string;
+  detail: string;
+}) {
   return (
     <Link
       href={href}
-      className="flex min-h-[6.5rem] flex-col justify-between rounded-2xl border border-border-subtle bg-background-secondary p-4 active:bg-background-tertiary"
+      className="flex min-h-[7rem] flex-col justify-between rounded-[1.1rem] border border-border-default bg-background-secondary p-4 transition-colors active:bg-background-tertiary"
     >
-      <span aria-hidden className="text-2xl leading-none">
-        {emoji}
+      <span className="grid h-9 w-9 place-items-center rounded-full bg-accent/10 text-accent-light">
+        <Icon className="h-5 w-5" />
       </span>
       <span>
         <span className="block font-semibold">{title}</span>

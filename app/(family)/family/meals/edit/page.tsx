@@ -7,7 +7,7 @@ import { applySwaps, position } from '@/lib/meals/swaps';
 import { chicagoDate, shortDate, weekdayName } from '@/lib/family/time';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: { absolute: 'Rearrange · Meals' } };
+export const metadata = { title: 'Rearrange meals' };
 
 export default async function EditWeekPage() {
   const today = chicagoDate();
@@ -17,7 +17,7 @@ export default async function EditWeekPage() {
     return (
       <main>
         <Link href="/family/meals" className="text-sm text-foreground-secondary">
-          ← Week
+          Back to the week
         </Link>
         <p className="mt-4 text-foreground-secondary">No meal plan to rearrange yet.</p>
       </main>
@@ -55,13 +55,13 @@ export default async function EditWeekPage() {
     <main>
       <div className="mb-4 flex items-center justify-between">
         <Link href="/family/meals" className="text-sm text-foreground-secondary">
-          ← Week
+          Back to the week
         </Link>
         <Link href="/family/meals" className="rounded-lg bg-accent px-4 py-1.5 text-sm font-semibold text-background-primary">
           Done
         </Link>
       </div>
-      <h1 className="mb-2 text-3xl font-semibold">Rearrange</h1>
+      <h1 className="mb-2 text-[2.25rem]">Rearrange</h1>
       <WeekEditor weekId={week.weekId} rows={rows} initialCells={cells} storageReady={!!getRedis()} />
     </main>
   );

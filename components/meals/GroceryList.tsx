@@ -102,7 +102,7 @@ export function GroceryList({
           if (visible.length === 0) return null;
           return (
             <section key={section.key}>
-              <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-foreground-tertiary">
+              <h2 className="mb-2 text-sm font-medium text-foreground-tertiary">
                 {section.heading}
               </h2>
               <ul className="divide-y divide-border-subtle rounded-2xl border border-border-subtle bg-background-secondary">
@@ -118,7 +118,7 @@ export function GroceryList({
                           type="checkbox"
                           checked={checked.has(item.id)}
                           onChange={() => toggle(item.id)}
-                          className="mt-1 h-5 w-5 shrink-0 accent-[#10B981]"
+                          className="mt-1 h-5 w-5 shrink-0 accent-accent"
                         />
                         <span className={cn('flex-1', checked.has(item.id) && 'text-foreground-tertiary line-through')}>
                           <span className="font-medium">{item.name}</span>

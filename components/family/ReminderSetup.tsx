@@ -47,7 +47,7 @@ function defaultDeviceLabel() {
             ? 'Windows PC'
             : 'Device';
   const browser = /Edg\//.test(ua) ? 'Edge' : /Firefox\//.test(ua) ? 'Firefox' : /Chrome\//.test(ua) ? 'Chrome' : '';
-  return browser && !isStandalone() ? `${device} · ${browser}` : device;
+  return browser && !isStandalone() ? `${device} (${browser})` : device;
 }
 
 function addedOn(iso: string) {
@@ -219,7 +219,7 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
           <ol className="mt-3 list-decimal space-y-1 pl-5 text-foreground-primary">
             <li>Tap the Share button in Safari.</li>
             <li>Choose “Add to Home Screen,” then “Add.”</li>
-            <li>Open Meals from your Home Screen and log in again (it has its own login).</li>
+            <li>Open Anguiano from your Home Screen and log in again (it has its own login).</li>
             <li>Come back to Reminders and turn them on.</li>
           </ol>
         </section>
@@ -243,7 +243,7 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
         <section className={card}>
           <h2 className="text-lg font-semibold">Notifications are blocked</h2>
           <p className="mt-1 text-sm text-foreground-secondary">
-            Turn them back on in iPhone Settings → Notifications → Meals, then reopen the app.
+            Turn them back on in iPhone Settings, then Notifications, then Anguiano, and reopen the app.
           </p>
         </section>
       )}
@@ -287,7 +287,7 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
 
       {devices.length > 0 && (
         <section>
-          <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-foreground-tertiary">
+          <h2 className="mb-2 text-sm font-medium text-foreground-tertiary">
             Devices getting reminders
           </h2>
           <ul className="divide-y divide-border-subtle rounded-2xl border border-border-subtle bg-background-secondary">
@@ -335,7 +335,7 @@ export function ReminderSetup({ vapidPublicKey }: { vapidPublicKey: string }) {
                         )}
                       </p>
                       <p className="text-xs text-foreground-tertiary">
-                        Added {addedOn(d.createdAt)} · {zoneLabel(d.timeZone)}
+                        Added {addedOn(d.createdAt)}, {zoneLabel(d.timeZone)}
                       </p>
                     </div>
                     <div className="flex shrink-0 gap-3 text-sm">

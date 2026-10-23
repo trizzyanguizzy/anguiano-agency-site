@@ -21,7 +21,7 @@ export default async function GroceriesPage() {
 
   const sections = grocerySections(week).map((s) => ({
     ...s,
-    heading: s.date ? `${weekdayName(s.date, 'short')} ${s.label.toLowerCase()} · ${s.meal}` : s.label,
+    heading: s.date ? `${weekdayName(s.date)} ${s.label.toLowerCase()}: ${s.meal}` : s.label,
   }));
   const first = week.days[0].date;
   const last = week.days[week.days.length - 1].date;
@@ -29,7 +29,7 @@ export default async function GroceriesPage() {
   return (
     <main>
       <header className="mb-4">
-        <h1 className="text-3xl font-semibold">Groceries</h1>
+        <h1 className="text-[2.25rem]">Groceries</h1>
         <p className="text-sm text-foreground-tertiary">
           {shortDate(first)} – {shortDate(last)}
         </p>

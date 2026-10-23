@@ -3,6 +3,19 @@
 @tailwind utilities;
 
 :root {
+  /* Color tokens as RGB triplets (see tailwind.config.ts). Portfolio defaults: */
+  --c-bg-1: 19 19 20;
+  --c-bg-2: 26 26 27;
+  --c-bg-3: 36 36 37;
+  --c-fg-1: 250 249 240;
+  --c-fg-2: 181 179 168;
+  --c-fg-3: 120 118 112;
+  --c-accent: 16 185 129;
+  --c-accent-hover: 5 150 105;
+  --c-accent-text: 52 211 153;
+  --c-brass: 210 166 87;
+  --c-line: 250 249 240;
+
   /* Anthropic Design System Colors */
   --background-primary: #131314;
   --background-secondary: #1a1a1b;
@@ -109,5 +122,72 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Anguiano family app (/family) ───────────────────────────────────────────
+   "Tudor": plaster walls, dark timber, leaded-glass teal, a little brass.
+   Light by day, dark at night (follows the phone). Applied to the whole page
+   whenever the family layout is on screen, so the body and overscroll match. */
+:root:has(.family-theme) {
+  --c-bg-1: 238 240 235;      /* plaster   #EEF0EB */
+  --c-bg-2: 251 251 248;      /* card      #FBFBF8 */
+  --c-bg-3: 227 229 222;      /* pressed   #E3E5DE */
+  --c-fg-1: 42 35 30;         /* timber    #2A231E */
+  --c-fg-2: 79 71 64;         /*           #4F4740 */
+  --c-fg-3: 111 102 93;       /*           #6F665D */
+  --c-accent: 45 100 104;     /* leaded glass #2D6468 */
+  --c-accent-hover: 36 84 90;
+  --c-accent-text: 41 92 96;  /* teal for text on plaster (≥ 5:1) */
+  --c-brass: 154 113 42;      /* brass, darkened for text #9A712A */
+  --c-line: 42 35 30;
+  --background-primary: #EEF0EB;
+  --background-secondary: #FBFBF8;
+  --foreground-primary: #2A231E;
+  --foreground-secondary: #4F4740;
+  --foreground-tertiary: #6F665D;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:has(.family-theme) {
+    --c-bg-1: 26 23 20;       /* timber night #1A1714 */
+    --c-bg-2: 36 32 28;       /* #24201C */
+    --c-bg-3: 48 43 38;       /* #302B26 */
+    --c-fg-1: 238 240 235;    /* plaster */
+    --c-fg-2: 204 198 189;
+    --c-fg-3: 158 150 140;
+    --c-accent: 99 168 171;   /* teal, lifted for dark #63A8AB */
+    --c-accent-hover: 125 188 190;
+    --c-accent-text: 132 195 197;
+    --c-brass: 214 171 92;
+    --c-line: 238 240 235;
+    --background-primary: #1A1714;
+    --background-secondary: #24201C;
+    --foreground-primary: #EEF0EB;
+    --foreground-secondary: #CCC6BD;
+    --foreground-tertiary: #9E968C;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  /* Undo the portfolio's type defaults inside the family app (zero-specificity, so utilities win). */
+  :where(.family-theme) {
+    font-family: var(--font-body), system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+  :where(.family-theme) p {
+    color: inherit;
+    line-height: 1.5;
+  }
+  :where(.family-theme) :is(h1, h2, h3, h4) {
+    color: inherit;
+    letter-spacing: -0.01em;
+  }
+  :where(.family-theme) h1 {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 500;
+    line-height: 1.08;
   }
 }

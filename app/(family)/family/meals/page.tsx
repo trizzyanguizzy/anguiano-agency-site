@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SwapIcon } from '@/components/family/icons';
 import { MealCard } from '@/components/meals/MealCard';
 import { getEffectiveWeeks } from '@/lib/meals/effective';
 import { getCurrentWeek, getDay } from '@/lib/meals/plan';
@@ -24,25 +25,26 @@ export default async function MealsHome() {
       <header className="mb-4 flex items-end justify-between gap-3">
         <div>
           <p className="text-sm text-foreground-tertiary">
-            Meals · {weekdayName(today)} {shortDate(today)}
+            {weekdayName(today)}, {shortDate(today)}
           </p>
-          <h1 className="text-3xl font-semibold">This week</h1>
+          <h1 className="text-[2.25rem]">This week</h1>
         </div>
         {week && (
           <Link
             href="/family/meals/edit"
-            className="mb-1 rounded-lg border border-border-default px-3 py-1.5 text-sm text-foreground-secondary active:bg-background-tertiary"
+            className="mb-1 inline-flex items-center gap-1.5 rounded-full border border-border-default bg-background-secondary px-3.5 py-1.5 text-sm text-foreground-secondary active:bg-background-tertiary"
           >
-            ⇅ Rearrange
+            <SwapIcon className="h-4 w-4" />
+            Rearrange
           </Link>
         )}
       </header>
 
       {day ? (
         <div className="flex flex-col gap-3">
-          <MealCard label="Lunch · 11:00" meal={day.lunch} href={`/family/meals/${today}/lunch`} />
+          <MealCard label="Lunch at 11" meal={day.lunch} href={`/family/meals/${today}/lunch`} />
           <MealCard
-            label="Dinner · 5–6"
+            label="Dinner at 5"
             meal={day.dinner}
             note={day.dinner?.startCookingNote}
             href={`/family/meals/${today}/dinner`}
@@ -50,7 +52,7 @@ export default async function MealsHome() {
           />
           {tonight.length > 0 && (
             <section className="rounded-2xl border border-border-subtle bg-background-tertiary p-4">
-              <p className="text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">Tonight</p>
+              <p className="text-sm font-medium text-foreground-tertiary">Tonight</p>
               <ul className="mt-2 space-y-1">
                 {tonight.map((t) => (
                   <li key={t} className="text-foreground-primary">
@@ -79,7 +81,7 @@ export default async function MealsHome() {
               <li key={d.date}>
                 <Link href={`/family/meals/${d.date}/dinner`} className="block px-4 pb-1 pt-3 active:bg-background-tertiary">
                   <p className="text-sm font-medium text-foreground-tertiary">
-                    {weekdayName(d.date)} · {shortDate(d.date)}
+                    {weekdayName(d.date)}, {shortDate(d.date)}
                   </p>
                   <p className="mt-0.5 font-medium">
                     {d.dinner?.title ?? 'No dinner planned'}

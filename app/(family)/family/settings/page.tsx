@@ -5,7 +5,7 @@ export const metadata = { title: 'Settings' };
 export default function SettingsPage() {
   return (
     <main>
-      <h1 className="mb-6 text-3xl font-semibold">Settings</h1>
+      <h1 className="mb-6 text-[2.25rem]">Settings</h1>
       <section>
         <h2 className="text-lg font-semibold">Reminders</h2>
         <p className="mb-4 mt-1 text-foreground-secondary">

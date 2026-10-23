@@ -14,7 +14,7 @@ const SLOTS = { lunch: 'Lunch', dinner: 'Dinner' } as const;
 export async function generateMetadata({ params }: { params: Promise<{ date: string; slot: string }> }) {
   const { date, slot } = await params;
   const meal = slot in SLOTS ? getDay(date, await getEffectiveWeeks())?.[slot as keyof typeof SLOTS] : undefined;
-  return { title: { absolute: meal ? `${meal.title} · Meals` : 'Meals' } };
+  return { title: meal ? meal.title : 'Meals' };
 }
 
 /** Groups consecutive steps under their heading while keeping one running step number. */
@@ -45,15 +45,15 @@ export default async function MealPage({ params }: { params: Promise<{ date: str
   return (
     <main>
       <Link href="/family/meals" className="mb-4 inline-flex items-center gap-1 text-sm text-foreground-secondary">
-        ← Week
+        Back to the week
       </Link>
 
       <header className="mb-5">
-        <p className="text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">
-          {weekdayName(date)} {shortDate(date)} · {SLOTS[slot as keyof typeof SLOTS]}
+        <p className="text-sm font-medium text-foreground-tertiary">
+          {SLOTS[slot as keyof typeof SLOTS]} on {weekdayName(date)}, {shortDate(date)}
         </p>
-        <h1 className="mt-1 text-3xl font-semibold leading-tight">{meal.title}</h1>
-        {meal.items.length > 0 && <p className="mt-1 text-foreground-secondary">{meal.items.join(' · ')}</p>}
+        <h1 className="mt-1 text-[2.25rem]">{meal.title}</h1>
+        {meal.items.length > 0 && <p className="mt-1 text-foreground-secondary">{meal.items.join(', ')}</p>}
         {stats.length > 0 && (
           <ul className="mt-3 flex flex-wrap gap-2">
             {stats.map((s) => (
@@ -89,7 +89,7 @@ export default async function MealPage({ params }: { params: Promise<{ date: str
               {groupSteps(recipe.steps).map((group, gi) => (
                 <div key={`${group.heading ?? 'steps'}-${gi}`}>
                   {group.heading && (
-                    <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">
+                    <h3 className="mb-2 text-sm font-medium text-foreground-tertiary">
                       {group.heading}
                     </h3>
                   )}
@@ -113,7 +113,7 @@ export default async function MealPage({ params }: { params: Promise<{ date: str
 
           {recipe.tips.length > 0 && (
             <section className="mt-8 rounded-2xl border border-border-subtle bg-background-tertiary p-4">
-              <h2 className="text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">Tips</h2>
+              <h2 className="text-sm font-medium text-foreground-tertiary">Tips</h2>
               <ul className="mt-2 space-y-2">
                 {recipe.tips.map((t) => (
                   <li key={t} className="text-foreground-secondary">

@@ -8,7 +8,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   return (
     <main className="flex min-h-[80vh] flex-col justify-center">
       <Image src="/family-assets/icon-192.png" alt="" width={64} height={64} className="mb-5 rounded-2xl" priority />
-      <h1 className="text-3xl font-semibold">Anguiano</h1>
+      <h1 className="text-[2.25rem]">Anguiano</h1>
       <p className="mt-2 text-foreground-secondary">Enter the family passcode.</p>
       <LoginForm next={next ?? '/family'} />
       <p className="mt-6 text-sm text-foreground-tertiary">

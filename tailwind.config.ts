@@ -9,22 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Colors come from CSS variables (app/globals.css) so the family app can swap in its own
+        // light and dark palettes while the portfolio keeps its original values.
         background: {
-          primary: '#131314',
-          secondary: '#1a1a1b',
-          tertiary: '#242425',
+          primary: 'rgb(var(--c-bg-1) / <alpha-value>)',
+          secondary: 'rgb(var(--c-bg-2) / <alpha-value>)',
+          tertiary: 'rgb(var(--c-bg-3) / <alpha-value>)',
         },
         foreground: {
-          primary: '#faf9f0',
-          secondary: '#b5b3a8',
-          tertiary: '#787670',
+          primary: 'rgb(var(--c-fg-1) / <alpha-value>)',
+          secondary: 'rgb(var(--c-fg-2) / <alpha-value>)',
+          tertiary: 'rgb(var(--c-fg-3) / <alpha-value>)',
         },
         accent: {
-          // Plain `accent` for the family app; `accent-orange` (actually green) for the portfolio.
-          DEFAULT: '#10B981',
-          hover: '#059669',
-          light: '#34D399',
-          dark: '#047857',
+          DEFAULT: 'rgb(var(--c-accent) / <alpha-value>)',
+          hover: 'rgb(var(--c-accent-hover) / <alpha-value>)',
+          light: 'rgb(var(--c-accent-text) / <alpha-value>)',
+          // Portfolio accent (named orange, actually green); unchanged.
           orange: {
             DEFAULT: '#10B981',
             hover: '#059669',
@@ -32,10 +33,11 @@ const config: Config = {
             dark: '#047857',
           },
         },
+        brass: 'rgb(var(--c-brass) / <alpha-value>)',
         border: {
-          subtle: 'rgba(250, 249, 240, 0.1)',
-          DEFAULT: 'rgba(250, 249, 240, 0.15)',
-          emphasis: 'rgba(250, 249, 240, 0.25)',
+          subtle: 'rgb(var(--c-line) / 0.1)',
+          DEFAULT: 'rgb(var(--c-line) / 0.15)',
+          emphasis: 'rgb(var(--c-line) / 0.25)',
         },
       },
       spacing: {
@@ -47,6 +49,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-jetbrains-mono)', 'monospace'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',

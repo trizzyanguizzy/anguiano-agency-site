@@ -146,7 +146,7 @@ export function WeekEditor({
         Recipes, groceries, and reminders follow the meal.
       </p>
 
-      <div className="mb-2 grid grid-cols-[3.25rem_1fr_1fr] gap-2 px-1 text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">
+      <div className="mb-2 grid grid-cols-[3.25rem_1fr_1fr] gap-2 px-1 text-sm font-medium text-foreground-tertiary">
         <span />
         <span>Lunch</span>
         <span>Dinner</span>
@@ -291,7 +291,7 @@ function Chip({
       </span>
       <span className="mt-0.5 flex items-center gap-1.5 text-xs text-foreground-tertiary">
         {cell.proteinG && <span>{cell.proteinG}</span>}
-        {movedHere && <span className="text-accent-light">moved</span>}
+        {movedHere && <span className="text-brass">moved</span>}
       </span>
     </div>
   );

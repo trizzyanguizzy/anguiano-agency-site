@@ -49,7 +49,7 @@ export function IngredientList({ ingredients, storageKey }: { ingredients: Ingre
       {groups.map((group, gi) => (
         <div key={`${group.heading ?? 'all'}-${gi}`}>
           {group.heading && (
-            <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-foreground-tertiary">
+            <h3 className="mb-1.5 text-sm font-medium text-foreground-tertiary">
               {group.heading}
             </h3>
           )}
