@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { isCronAuthorized } from '@/lib/meals/auth';
 import { buildMessage, SLOTS, type Slot } from '@/lib/meals/messages';
+import { getEffectiveWeeks } from '@/lib/meals/effective';
 import { getDay } from '@/lib/meals/plan';
 import { listSubscriptions, sendToAll } from '@/lib/meals/push';
 import { getRedis } from '@/lib/meals/redis';
@@ -52,7 +53,8 @@ export async function GET(request: Request, { params }: { params: Promise<{ job:
       return NextResponse.json({ error: 'manual sends need ?force=1' }, { status: 400 });
     }
     const date = chicagoDate();
-    const payload = buildMessage(job as Slot, getDay(date), getDay(addDays(date, 1)));
+    const plan = await getEffectiveWeeks();
+    const payload = buildMessage(job as Slot, getDay(date, plan), getDay(addDays(date, 1), plan));
     if (dryRun || !payload) return NextResponse.json({ slot: job, date, payload });
     return NextResponse.json({ slot: job, date, ...(await sendToAll(payload)) });
   }

@@ -65,6 +65,9 @@ Rules:
 - List each grocery item under the **first** meal that uses it; later meals that reuse it get a `"have": true` line.
 - A day can skip `lunch` or `dinner`.
 
+## Rearranging meals
+Tap **⇅ Rearrange** on the Week page to swap lunches with lunches or dinners with dinners between days (drag, or tap two). Swaps are saved in Redis per week (`meals:swaps:<weekId>`), not in this file, and apply everywhere: the Week page, recipes, groceries, and reminders, including the freezer reminder for whichever dinner is now tomorrow. Past days are locked. **Reset to original plan** clears them.
+
 ## Reminders (each phone's local time)
 | Window | What |
 |---|---|

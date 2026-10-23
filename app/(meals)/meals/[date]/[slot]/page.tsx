@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { CookMode } from '@/components/meals/CookMode';
 import { IngredientList } from '@/components/meals/IngredientList';
+import { getEffectiveWeeks } from '@/lib/meals/effective';
 import { getDay } from '@/lib/meals/plan';
 import type { Step } from '@/lib/meals/schema';
 import { shortDate, weekdayName } from '@/lib/meals/time';
@@ -12,7 +13,7 @@ const SLOTS = { lunch: 'Lunch', dinner: 'Dinner' } as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ date: string; slot: string }> }) {
   const { date, slot } = await params;
-  const meal = slot in SLOTS ? getDay(date)?.[slot as keyof typeof SLOTS] : undefined;
+  const meal = slot in SLOTS ? getDay(date, await getEffectiveWeeks())?.[slot as keyof typeof SLOTS] : undefined;
   return { title: { absolute: meal ? `${meal.title} · Meals` : 'Meals' } };
 }
 
@@ -30,7 +31,7 @@ function groupSteps(steps: Step[]) {
 export default async function MealPage({ params }: { params: Promise<{ date: string; slot: string }> }) {
   const { date, slot } = await params;
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !(slot in SLOTS)) notFound();
-  const meal = getDay(date)?.[slot as keyof typeof SLOTS];
+  const meal = getDay(date, await getEffectiveWeeks())?.[slot as keyof typeof SLOTS];
   if (!meal) notFound();
   const recipe = meal.recipe;
 
