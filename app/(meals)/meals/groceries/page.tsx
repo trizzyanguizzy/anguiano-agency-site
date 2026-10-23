@@ -1,5 +1,6 @@
 import { MealsNav } from '@/components/meals/MealsNav';
 import { GroceryList } from '@/components/meals/GroceryList';
+import { getEffectiveWeeks } from '@/lib/meals/effective';
 import { getCurrentWeek, grocerySections } from '@/lib/meals/plan';
 import { getRedis, keys } from '@/lib/meals/redis';
 import { shortDate, weekdayName } from '@/lib/meals/time';
@@ -7,7 +8,7 @@ import { shortDate, weekdayName } from '@/lib/meals/time';
 export const dynamic = 'force-dynamic';
 
 export default async function GroceriesPage() {
-  const week = getCurrentWeek();
+  const week = getCurrentWeek(undefined, await getEffectiveWeeks());
   if (!week) {
     return (
       <main>

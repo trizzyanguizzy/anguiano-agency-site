@@ -1,4 +1,5 @@
 import { buildMessage, SLOTS, TARGET_HOUR, type Slot } from './messages';
+import { getEffectiveWeeks } from './effective';
 import { getDay } from './plan';
 import { listSubscriptions, sendToDevice, type DeviceRecord } from './push';
 import { requireRedis, keys } from './redis';
@@ -31,13 +32,13 @@ export function dueReminders(now: Date, devices: Array<{ id: string; timeZone?: 
 
 /** Hourly tick: sends each device whatever is due in its local time, at most once per slot per local day. */
 export async function runTick(now = new Date()) {
-  const devices = await listSubscriptions();
+  const [devices, plan] = await Promise.all([listSubscriptions(), getEffectiveWeeks()]);
   const byId = new Map<string, DeviceRecord>(devices.map((d) => [d.id, d]));
   const redis = requireRedis();
   const results: Array<Due & { result: string }> = [];
 
   for (const item of dueReminders(now, devices)) {
-    const payload = buildMessage(item.slot, getDay(item.date), getDay(addDays(item.date, 1)));
+    const payload = buildMessage(item.slot, getDay(item.date, plan), getDay(addDays(item.date, 1), plan));
     if (!payload) {
       results.push({ ...item, result: 'nothing-to-send' });
       continue;

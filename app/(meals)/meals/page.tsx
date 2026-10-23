@@ -1,16 +1,18 @@
 import Link from 'next/link';
 import { MealsNav } from '@/components/meals/MealsNav';
 import { MealCard } from '@/components/meals/MealCard';
+import { getEffectiveWeeks } from '@/lib/meals/effective';
 import { getCurrentWeek, getDay } from '@/lib/meals/plan';
 import { addDays, chicagoDate, shortDate, weekdayName } from '@/lib/meals/time';
 
 export const dynamic = 'force-dynamic';
 
-export default function MealsHome() {
+export default async function MealsHome() {
+  const plan = await getEffectiveWeeks();
   const today = chicagoDate();
-  const day = getDay(today);
-  const tomorrow = getDay(addDays(today, 1));
-  const week = getCurrentWeek(today);
+  const day = getDay(today, plan);
+  const tomorrow = getDay(addDays(today, 1), plan);
+  const week = getCurrentWeek(today, plan);
 
   const tonight = [
     ...(tomorrow?.dinner?.fromFreezer ?? []).map((item) => `Move ${item} from freezer to fridge`),
@@ -22,9 +24,19 @@ export default function MealsHome() {
     <main>
       <MealsNav active="/meals" />
 
-      <header className="mb-4">
-        <p className="text-sm text-foreground-tertiary">{shortDate(today)}</p>
-        <h1 className="text-3xl font-semibold">{weekdayName(today)}</h1>
+      <header className="mb-4 flex items-end justify-between gap-3">
+        <div>
+          <p className="text-sm text-foreground-tertiary">{shortDate(today)}</p>
+          <h1 className="text-3xl font-semibold">{weekdayName(today)}</h1>
+        </div>
+        {week && (
+          <Link
+            href="/meals/edit"
+            className="mb-1 rounded-lg border border-border-default px-3 py-1.5 text-sm text-foreground-secondary active:bg-background-tertiary"
+          >
+            ⇅ Rearrange
+          </Link>
+        )}
       </header>
 
       {day ? (
