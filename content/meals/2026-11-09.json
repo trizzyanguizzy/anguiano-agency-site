@@ -244,25 +244,23 @@
         }
       },
       "dinner": {
-        "title": "Pesto chicken pasta",
+        "title": "Sheet-pan garlic parmesan chicken",
         "items": [
-          "Protein spaghetti",
-          "Broccoli",
-          "Parmesan"
+          "Roasted baby potatoes",
+          "Broccoli"
         ],
-        "proteinG": "~60g",
+        "proteinG": "~55g",
         "groceries": [
           {
-            "id": "chicken-pesto",
+            "id": "chicken-sheetpan",
             "name": "Boneless skinless chicken breasts",
             "qty": "1.25 lb",
             "note": "Cooking Tuesday, so the fridge is fine"
           },
           {
-            "id": "spaghetti",
-            "name": "Protein spaghetti",
-            "qty": "1 box",
-            "note": "Barilla Protein+ or Banza"
+            "id": "baby-potatoes",
+            "name": "Baby potatoes",
+            "qty": "1.5 lb bag"
           },
           {
             "id": "broccoli",
@@ -270,9 +268,10 @@
             "qty": "1 crown"
           },
           {
-            "id": "pesto",
-            "name": "Basil pesto",
-            "qty": "1 jar"
+            "id": "garlic",
+            "name": "Garlic",
+            "qty": "1 head",
+            "note": "Also steak, fajitas, ziti, and pot roast"
           },
           {
             "id": "parmesan",
@@ -291,11 +290,27 @@
         "recipe": {
           "servings": 2,
           "prepMinutes": 10,
-          "cookMinutes": 15,
+          "cookMinutes": 30,
           "ingredients": [
             {
-              "qty": "1.25 lb, in bite-size pieces",
+              "qty": "1.5 lb, halved",
+              "name": "Baby potatoes",
+              "group": "Potatoes"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Olive oil",
+              "group": "Potatoes"
+            },
+            {
+              "qty": "½ tsp",
+              "name": "Salt",
+              "group": "Potatoes"
+            },
+            {
+              "qty": "1.25 lb",
               "name": "Chicken breasts",
+              "note": "or thin-sliced cutlets",
               "group": "Chicken"
             },
             {
@@ -304,8 +319,18 @@
               "group": "Chicken"
             },
             {
+              "qty": "3 cloves, minced",
+              "name": "Garlic",
+              "group": "Chicken"
+            },
+            {
               "qty": "1 tsp",
               "name": "Italian seasoning",
+              "group": "Chicken"
+            },
+            {
+              "qty": "⅓ cup",
+              "name": "Grated parmesan",
               "group": "Chicken"
             },
             {
@@ -314,56 +339,47 @@
               "group": "Chicken"
             },
             {
-              "qty": "6 oz",
-              "name": "Protein spaghetti",
-              "group": "Pasta"
-            },
-            {
-              "qty": "1 crown, in small florets",
+              "qty": "1 crown, in florets",
               "name": "Broccoli",
-              "group": "Pasta"
+              "group": "Broccoli"
             },
             {
-              "qty": "⅓ cup",
-              "name": "Basil pesto",
-              "group": "Pasta"
-            },
-            {
-              "qty": "¼ cup",
-              "name": "Grated parmesan",
-              "group": "Pasta"
+              "qty": "1 tbsp",
+              "name": "Olive oil",
+              "group": "Broccoli"
             }
           ],
           "steps": [
             {
-              "group": "Start",
-              "text": "Bring a large pot of salted water to a boil."
-            },
-            {
-              "group": "Chicken",
-              "text": "Season the chicken with Italian seasoning, salt, and pepper. Cook in the oil in a large skillet over medium-high, stirring now and then, until browned and 165°F inside.",
-              "minutes": 8
-            },
-            {
-              "group": "Pasta",
-              "text": "Cook the spaghetti. Add the broccoli to the same pot for the last 3 minutes.",
+              "group": "Potatoes",
+              "text": "Heat the oven to 425°F. Toss the potatoes with oil and salt on a sheet pan, cut side down, and roast to give them a head start.",
               "minutes": 10
             },
             {
-              "group": "Pasta",
-              "text": "Scoop out ½ cup of the pasta water, then drain."
+              "group": "Chicken",
+              "text": "If the breasts are thick, pound them to an even ¾ inch. Rub with oil, garlic, Italian seasoning, salt, and pepper, then press the parmesan onto the tops."
+            },
+            {
+              "group": "Broccoli",
+              "text": "Toss the broccoli with oil and salt."
+            },
+            {
+              "group": "Roast",
+              "text": "Push the potatoes to the sides, add the chicken in the middle and the broccoli around it, and roast until the chicken reads 165°F and the parmesan is golden.",
+              "minutes": 20
             },
             {
               "group": "Serve",
-              "text": "Toss the pasta and broccoli into the skillet with the chicken, pesto, parmesan, and a splash of pasta water until glossy."
+              "text": "Rest the chicken 5 minutes, then slice.",
+              "minutes": 5
             }
           ],
           "tips": [
-            "One pot, one pan, about 25 minutes.",
-            "Add more pasta water a little at a time if it looks dry."
+            "One pan, about 35 minutes, almost all hands-off.",
+            "Run it under the broiler for 1–2 minutes at the end for a crispier parmesan crust."
           ]
         },
-        "startCookingNote": "One pot and one pan; dinner in about 25 minutes."
+        "startCookingNote": "One sheet pan; potatoes go in first, and dinner is ready in about 35 minutes."
       }
     },
     {
@@ -449,12 +465,6 @@
             "note": "A whole cut keeps in the fridge until Wednesday"
           },
           {
-            "id": "garlic",
-            "name": "Garlic",
-            "qty": "1 head",
-            "note": "Also fajitas, ziti, and pot roast"
-          },
-          {
             "id": "yukon",
             "name": "Yukon gold potatoes",
             "qty": "3 lb bag",
@@ -467,7 +477,7 @@
           },
           {
             "id": "steak-have",
-            "name": "Butter, Greek yogurt",
+            "name": "Butter, garlic, Greek yogurt",
             "have": true
           }
         ],
