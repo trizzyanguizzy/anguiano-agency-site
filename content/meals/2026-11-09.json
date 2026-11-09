@@ -1,0 +1,1387 @@
+{
+  "weekId": "2026-11-09",
+  "household": 2,
+  "notes": [
+    "Shopping at Hy-Vee. Link your Perks account for member pricing.",
+    "When you get home, freeze both packs of ground beef, the enchilada chicken, and the chuck roast. Tuesday's chicken and Thursday's steak can stay in the fridge.",
+    "Pantry check: olive oil, salt, pepper, butter, Italian seasoning, cumin, ketchup, brown sugar, Dijon, Worcestershire, dried thyme."
+  ],
+  "days": [
+    {
+      "date": "2026-11-09",
+      "dinner": {
+        "title": "Breakfast burritos",
+        "items": [
+          "Scrambled eggs",
+          "Crispy potato rounds",
+          "Cheddar",
+          "Salsa and Greek yogurt"
+        ],
+        "proteinG": "~40g",
+        "groceries": [
+          {
+            "id": "tortillas-large",
+            "name": "Large burrito-size tortillas",
+            "qty": "1 pack of 8",
+            "note": "4 tonight, 4 for the Tue–Wed Caesar wraps. High-protein or carb-balance for extra grams"
+          },
+          {
+            "id": "eggs",
+            "name": "Eggs",
+            "qty": "1 dozen",
+            "note": "8 tonight, 1 each for chicken parm and meatloaf"
+          },
+          {
+            "id": "salsa",
+            "name": "Salsa",
+            "qty": "1 large jar",
+            "note": "Also fajitas and enchiladas"
+          },
+          {
+            "id": "potato-rounds",
+            "name": "Frozen potato rounds",
+            "qty": "1 bag"
+          },
+          {
+            "id": "cheddar",
+            "name": "Shredded cheddar",
+            "qty": "16 oz",
+            "note": "Also fajitas and enchiladas"
+          },
+          {
+            "id": "greek-yogurt",
+            "name": "Plain Greek yogurt",
+            "qty": "32 oz",
+            "note": "Also mashed potatoes, fajitas, and enchiladas"
+          }
+        ],
+        "fromFreezer": [],
+        "prepTonight": [],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 10,
+          "cookMinutes": 25,
+          "ingredients": [
+            {
+              "qty": "4",
+              "name": "Large tortillas",
+              "group": "Burritos"
+            },
+            {
+              "qty": "8",
+              "name": "Eggs",
+              "group": "Burritos"
+            },
+            {
+              "qty": "about 3 cups",
+              "name": "Frozen potato rounds",
+              "group": "Burritos"
+            },
+            {
+              "qty": "1 cup",
+              "name": "Shredded cheddar",
+              "group": "Burritos"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Butter or oil",
+              "group": "Burritos"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt and pepper",
+              "group": "Burritos"
+            },
+            {
+              "qty": "for filling and dipping",
+              "name": "Salsa",
+              "group": "To serve"
+            },
+            {
+              "qty": "½ cup",
+              "name": "Plain Greek yogurt",
+              "note": "instead of sour cream",
+              "group": "To serve"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Potatoes",
+              "text": "Heat the oven (or air fryer) to 425°F. Bake the potato rounds in one layer until crisp, flipping once.",
+              "minutes": 22
+            },
+            {
+              "group": "Eggs",
+              "text": "Whisk the eggs with a pinch of salt and pepper."
+            },
+            {
+              "group": "Eggs",
+              "text": "When the potatoes have about 5 minutes left, melt the butter in a nonstick skillet over medium-low. Add the eggs and stir slowly until just set and still glossy.",
+              "minutes": 4
+            },
+            {
+              "group": "Assemble",
+              "text": "Warm the tortillas for 15 seconds. Fill each with eggs, potato rounds, a handful of cheddar, and a spoonful of salsa. Fold in the sides and roll tight."
+            },
+            {
+              "group": "Assemble",
+              "text": "Sear seam side down in the same skillet over medium until golden and sealed, then flip.",
+              "minutes": 3
+            },
+            {
+              "group": "Serve",
+              "text": "Serve with salsa and Greek yogurt for dipping."
+            }
+          ],
+          "tips": [
+            "Low heat keeps the eggs soft; they keep cooking inside the burrito.",
+            "Want more protein? A ½ lb of browned breakfast sausage across the four burritos adds about 15g each."
+          ]
+        },
+        "startCookingNote": "Potato rounds go in first (about 20 minutes); the eggs take 5."
+      }
+    },
+    {
+      "date": "2026-11-10",
+      "lunch": {
+        "title": "Chicken Caesar wraps",
+        "items": [
+          "Grilled chicken and Caesar salad in a tortilla",
+          "High-protein Greek yogurt cup"
+        ],
+        "proteinG": "~50g",
+        "groceries": [
+          {
+            "id": "chicken-strips",
+            "name": "Refrigerated grilled chicken strips",
+            "qty": "2 packs (about 1 lb)",
+            "note": "Fully cooked; Tue–Wed lunches"
+          },
+          {
+            "id": "caesar-kits",
+            "name": "Caesar salad kits",
+            "qty": "2"
+          },
+          {
+            "id": "yogurt-cups",
+            "name": "High-protein Greek yogurt cups",
+            "qty": "4",
+            "note": "Oikos Pro or similar"
+          },
+          {
+            "id": "tortillas-large-have",
+            "name": "Large tortillas",
+            "have": true
+          }
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 5,
+          "ingredients": [
+            {
+              "qty": "2",
+              "name": "Large tortillas"
+            },
+            {
+              "qty": "about 8 oz",
+              "name": "Grilled chicken strips",
+              "note": "fully cooked, cold or warmed"
+            },
+            {
+              "qty": "1",
+              "name": "Caesar salad kit",
+              "note": "lettuce, dressing, croutons, parmesan"
+            },
+            {
+              "qty": "2",
+              "name": "High-protein Greek yogurt cups"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Warm the tortillas for 15 seconds so they don't crack."
+            },
+            {
+              "text": "Toss the kit's lettuce with the dressing and parmesan. Crush the croutons in by hand."
+            },
+            {
+              "text": "Pile half the salad and half the chicken onto each tortilla. Fold in the sides and roll tight."
+            },
+            {
+              "text": "Eat with a yogurt cup on the side."
+            }
+          ],
+          "tips": [
+            "Packing it in the morning? Keep the dressing in its packet and add it at lunch so the wrap doesn't go soggy."
+          ]
+        }
+      },
+      "dinner": {
+        "title": "Chicken parmesan",
+        "items": [
+          "Protein spaghetti with marinara",
+          "Roasted broccoli"
+        ],
+        "proteinG": "~65g",
+        "groceries": [
+          {
+            "id": "chicken-parm",
+            "name": "Boneless skinless chicken breasts",
+            "qty": "2 (about 1.25 lb)",
+            "note": "Cooking Tuesday, so the fridge is fine"
+          },
+          {
+            "id": "panko",
+            "name": "Panko breadcrumbs",
+            "qty": "1 canister",
+            "note": "Also meatloaf"
+          },
+          {
+            "id": "parmesan",
+            "name": "Grated parmesan",
+            "qty": "1 container",
+            "note": "Also baked ziti"
+          },
+          {
+            "id": "mozzarella",
+            "name": "Shredded mozzarella",
+            "qty": "16 oz",
+            "note": "Also baked ziti"
+          },
+          {
+            "id": "marinara",
+            "name": "Marinara",
+            "qty": "2 jars (24 oz)",
+            "note": "One tonight, one for baked ziti"
+          },
+          {
+            "id": "spaghetti",
+            "name": "Protein spaghetti",
+            "qty": "1 box",
+            "note": "Barilla Protein+ or Banza"
+          },
+          {
+            "id": "broccoli",
+            "name": "Broccoli",
+            "qty": "1 crown"
+          },
+          {
+            "id": "italian-seasoning",
+            "name": "Italian seasoning",
+            "note": "Check pantry"
+          },
+          {
+            "id": "eggs-have-tue",
+            "name": "Eggs",
+            "have": true
+          }
+        ],
+        "fromFreezer": [],
+        "prepTonight": [],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 15,
+          "cookMinutes": 30,
+          "ingredients": [
+            {
+              "qty": "2 (about 1.25 lb)",
+              "name": "Chicken breasts",
+              "note": "halved into thin cutlets",
+              "group": "Chicken"
+            },
+            {
+              "qty": "1",
+              "name": "Egg",
+              "group": "Chicken"
+            },
+            {
+              "qty": "¾ cup",
+              "name": "Panko",
+              "group": "Chicken"
+            },
+            {
+              "qty": "¼ cup",
+              "name": "Grated parmesan",
+              "group": "Chicken"
+            },
+            {
+              "qty": "1 tsp",
+              "name": "Italian seasoning",
+              "group": "Chicken"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt and pepper",
+              "group": "Chicken"
+            },
+            {
+              "qty": "2 tbsp",
+              "name": "Olive oil",
+              "group": "Chicken"
+            },
+            {
+              "qty": "1 cup",
+              "name": "Marinara",
+              "group": "Chicken"
+            },
+            {
+              "qty": "1 cup",
+              "name": "Shredded mozzarella",
+              "group": "Chicken"
+            },
+            {
+              "qty": "6 oz",
+              "name": "Protein spaghetti",
+              "group": "Pasta"
+            },
+            {
+              "qty": "1 cup",
+              "name": "Marinara",
+              "group": "Pasta"
+            },
+            {
+              "qty": "1 crown, in florets",
+              "name": "Broccoli",
+              "group": "Broccoli"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Olive oil",
+              "group": "Broccoli"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Start",
+              "text": "Heat the oven to 425°F. Put a pot of salted water on to boil."
+            },
+            {
+              "group": "Chicken",
+              "text": "Slice each breast in half horizontally into thin cutlets. Season with salt and pepper."
+            },
+            {
+              "group": "Chicken",
+              "text": "Beat the egg in one shallow dish. Mix the panko, parmesan, and Italian seasoning in another. Dip each cutlet in egg, then press into the crumbs."
+            },
+            {
+              "group": "Broccoli",
+              "text": "Toss the broccoli with oil and salt on one side of a sheet pan and roast.",
+              "minutes": 20
+            },
+            {
+              "group": "Chicken",
+              "text": "Heat the oil in an oven-safe skillet over medium-high. Fry the cutlets until golden on both sides.",
+              "minutes": 6
+            },
+            {
+              "group": "Chicken",
+              "text": "Spoon marinara over the cutlets, top with mozzarella, and move the skillet to the oven until the cheese bubbles and the chicken hits 165°F.",
+              "minutes": 10
+            },
+            {
+              "group": "Pasta",
+              "text": "Meanwhile, cook the spaghetti, drain, and toss with the remaining marinara.",
+              "minutes": 10
+            },
+            {
+              "group": "Serve",
+              "text": "Serve the chicken over the spaghetti with broccoli on the side."
+            }
+          ],
+          "tips": [
+            "Thin cutlets cook through before the crust burns. Don't skip slicing them."
+          ]
+        },
+        "startCookingNote": "Bread the chicken while the oven heats; everything is done in about 35 minutes."
+      }
+    },
+    {
+      "date": "2026-11-11",
+      "lunch": {
+        "title": "Chicken Caesar wraps",
+        "items": [
+          "Grilled chicken and Caesar salad in a tortilla",
+          "High-protein Greek yogurt cup"
+        ],
+        "proteinG": "~50g",
+        "groceries": [],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 5,
+          "ingredients": [
+            {
+              "qty": "2",
+              "name": "Large tortillas"
+            },
+            {
+              "qty": "about 8 oz",
+              "name": "Grilled chicken strips",
+              "note": "fully cooked, cold or warmed"
+            },
+            {
+              "qty": "1",
+              "name": "Caesar salad kit",
+              "note": "lettuce, dressing, croutons, parmesan"
+            },
+            {
+              "qty": "2",
+              "name": "High-protein Greek yogurt cups"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Warm the tortillas for 15 seconds so they don't crack."
+            },
+            {
+              "text": "Toss the kit's lettuce with the dressing and parmesan. Crush the croutons in by hand."
+            },
+            {
+              "text": "Pile half the salad and half the chicken onto each tortilla. Fold in the sides and roll tight."
+            },
+            {
+              "text": "Eat with a yogurt cup on the side."
+            }
+          ],
+          "tips": [
+            "Packing it in the morning? Keep the dressing in its packet and add it at lunch so the wrap doesn't go soggy."
+          ]
+        }
+      },
+      "dinner": {
+        "title": "Meatloaf",
+        "items": [
+          "Greek yogurt mashed potatoes",
+          "Green beans"
+        ],
+        "proteinG": "~50g",
+        "groceries": [
+          {
+            "id": "ground-beef-meatloaf",
+            "name": "93% lean ground beef",
+            "qty": "1.25 lb",
+            "note": "Freeze when home"
+          },
+          {
+            "id": "onions",
+            "name": "Yellow onions",
+            "qty": "3",
+            "note": "Also fajitas, enchiladas, and pot roast"
+          },
+          {
+            "id": "garlic",
+            "name": "Garlic",
+            "qty": "1 head",
+            "note": "Also fajitas, ziti, and pot roast"
+          },
+          {
+            "id": "yukon",
+            "name": "Yukon gold potatoes",
+            "qty": "3 lb bag",
+            "note": "Half for Sunday's pot roast"
+          },
+          {
+            "id": "green-beans",
+            "name": "Green beans",
+            "qty": "1 lb"
+          },
+          {
+            "id": "worcestershire",
+            "name": "Worcestershire sauce",
+            "note": "Check pantry; also pot roast"
+          },
+          {
+            "id": "ketchup-sugar-dijon",
+            "name": "Ketchup, brown sugar, Dijon",
+            "note": "Check pantry"
+          },
+          {
+            "id": "meatloaf-have",
+            "name": "Eggs, panko, Greek yogurt",
+            "have": true
+          }
+        ],
+        "fromFreezer": [
+          "Ground beef (1.25 lb)"
+        ],
+        "prepTonight": [],
+        "recipe": {
+          "servings": 3,
+          "prepMinutes": 15,
+          "cookMinutes": 55,
+          "ingredients": [
+            {
+              "qty": "1.25 lb",
+              "name": "93% lean ground beef",
+              "group": "Meatloaf"
+            },
+            {
+              "qty": "1",
+              "name": "Egg",
+              "group": "Meatloaf"
+            },
+            {
+              "qty": "½ cup",
+              "name": "Panko",
+              "group": "Meatloaf"
+            },
+            {
+              "qty": "½, finely diced",
+              "name": "Yellow onion",
+              "group": "Meatloaf"
+            },
+            {
+              "qty": "2 cloves, minced",
+              "name": "Garlic",
+              "group": "Meatloaf"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Worcestershire sauce",
+              "group": "Meatloaf"
+            },
+            {
+              "qty": "2 tbsp",
+              "name": "Ketchup",
+              "group": "Meatloaf"
+            },
+            {
+              "qty": "1 tsp",
+              "name": "Salt",
+              "group": "Meatloaf"
+            },
+            {
+              "qty": "½ tsp",
+              "name": "Pepper",
+              "group": "Meatloaf"
+            },
+            {
+              "qty": "⅓ cup",
+              "name": "Ketchup",
+              "group": "Glaze"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Brown sugar",
+              "group": "Glaze"
+            },
+            {
+              "qty": "1 tsp",
+              "name": "Dijon mustard",
+              "group": "Glaze"
+            },
+            {
+              "qty": "1.5 lb, chunked",
+              "name": "Yukon gold potatoes",
+              "group": "Mashed potatoes"
+            },
+            {
+              "qty": "2 tbsp",
+              "name": "Butter",
+              "group": "Mashed potatoes"
+            },
+            {
+              "qty": "½ cup",
+              "name": "Plain Greek yogurt",
+              "group": "Mashed potatoes"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt and pepper",
+              "group": "Mashed potatoes"
+            },
+            {
+              "qty": "1 lb, trimmed",
+              "name": "Green beans",
+              "group": "Green beans"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Olive oil",
+              "group": "Green beans"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Start",
+              "text": "Heat the oven to 375°F."
+            },
+            {
+              "group": "Meatloaf",
+              "text": "Mix the beef, egg, panko, onion, garlic, Worcestershire, ketchup, salt, and pepper with your hands until just combined. Don't overwork it."
+            },
+            {
+              "group": "Meatloaf",
+              "text": "Shape into a loaf about 8 × 4 inches on a foil-lined sheet pan."
+            },
+            {
+              "group": "Meatloaf",
+              "text": "Stir the glaze together and spread half over the top. Bake.",
+              "minutes": 35
+            },
+            {
+              "group": "Meatloaf",
+              "text": "Spread on the rest of the glaze and bake until the center reads 160°F.",
+              "minutes": 15
+            },
+            {
+              "group": "Mashed potatoes",
+              "text": "While it bakes, cover the potatoes with cold salted water, boil until fork-tender, drain, and mash with butter, Greek yogurt, salt, and pepper.",
+              "minutes": 20
+            },
+            {
+              "group": "Green beans",
+              "text": "Sauté the green beans in oil over medium-high until blistered, then salt.",
+              "minutes": 7
+            },
+            {
+              "group": "Serve",
+              "text": "Rest the meatloaf 5 minutes, then slice.",
+              "minutes": 5
+            }
+          ],
+          "tips": [
+            "Leftover slices make a great cold sandwich with a little ketchup."
+          ]
+        },
+        "startCookingNote": "Get the meatloaf in by 5; it bakes about 50 minutes, and the sides cook while it does."
+      }
+    },
+    {
+      "date": "2026-11-12",
+      "lunch": {
+        "title": "Protein snack boxes",
+        "items": [
+          "Turkey and cheese roll-ups",
+          "2 hard-boiled eggs",
+          "Hummus and snap peas"
+        ],
+        "proteinG": "~45g",
+        "groceries": [
+          {
+            "id": "deli-turkey",
+            "name": "Deli turkey",
+            "qty": "1 lb",
+            "note": "Thu–Fri lunches"
+          },
+          {
+            "id": "cheese-slices",
+            "name": "Pepper jack or Colby jack slices",
+            "qty": "1 pack"
+          },
+          {
+            "id": "hb-eggs",
+            "name": "Pre-peeled hard-boiled eggs",
+            "qty": "8"
+          },
+          {
+            "id": "hummus",
+            "name": "Hummus single cups",
+            "qty": "4"
+          },
+          {
+            "id": "snap-peas",
+            "name": "Snap peas",
+            "qty": "8 oz"
+          }
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 5,
+          "ingredients": [
+            {
+              "qty": "8 oz",
+              "name": "Deli turkey"
+            },
+            {
+              "qty": "4",
+              "name": "Pepper jack or Colby jack slices"
+            },
+            {
+              "qty": "4",
+              "name": "Hard-boiled eggs"
+            },
+            {
+              "qty": "2",
+              "name": "Hummus cups"
+            },
+            {
+              "qty": "a couple handfuls",
+              "name": "Snap peas"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Roll 2 slices of turkey around each slice of cheese (2 roll-ups per person)."
+            },
+            {
+              "text": "Add 2 eggs each, seasoned with salt and pepper."
+            },
+            {
+              "text": "Pack a hummus cup and snap peas for dipping."
+            }
+          ]
+        }
+      },
+      "dinner": {
+        "title": "Steak fajitas",
+        "items": [
+          "Charred peppers and onions",
+          "Warm tortillas",
+          "Cheddar, salsa, Greek yogurt"
+        ],
+        "proteinG": "~60g",
+        "groceries": [
+          {
+            "id": "flank",
+            "name": "Flank steak or sirloin",
+            "qty": "1.25 lb",
+            "note": "A whole cut keeps in the fridge until Thursday"
+          },
+          {
+            "id": "bell-peppers",
+            "name": "Bell peppers",
+            "qty": "3, mixed colors"
+          },
+          {
+            "id": "limes",
+            "name": "Limes",
+            "qty": "2"
+          },
+          {
+            "id": "tortillas-fajita",
+            "name": "Fajita-size flour tortillas",
+            "qty": "2 packs",
+            "note": "Also enchiladas"
+          },
+          {
+            "id": "fajita-seasoning",
+            "name": "Fajita seasoning",
+            "note": "Or chili powder + cumin from the pantry"
+          },
+          {
+            "id": "fajitas-have",
+            "name": "Onion, garlic, cheddar, salsa, Greek yogurt",
+            "have": true
+          }
+        ],
+        "fromFreezer": [],
+        "prepTonight": [],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 15,
+          "cookMinutes": 20,
+          "ingredients": [
+            {
+              "qty": "1.25 lb",
+              "name": "Flank steak or sirloin",
+              "group": "Steak"
+            },
+            {
+              "qty": "2 tbsp",
+              "name": "Fajita seasoning",
+              "note": "or 1 tbsp chili powder + 1 tsp cumin + 1 tsp salt",
+              "group": "Steak"
+            },
+            {
+              "qty": "1 lime",
+              "name": "Lime juice",
+              "group": "Steak"
+            },
+            {
+              "qty": "2 tbsp",
+              "name": "Olive oil",
+              "group": "Steak"
+            },
+            {
+              "qty": "2 cloves, minced",
+              "name": "Garlic",
+              "group": "Steak"
+            },
+            {
+              "qty": "3, sliced",
+              "name": "Bell peppers",
+              "group": "Peppers and onions"
+            },
+            {
+              "qty": "1, sliced",
+              "name": "Yellow onion",
+              "group": "Peppers and onions"
+            },
+            {
+              "qty": "6",
+              "name": "Fajita-size tortillas",
+              "group": "To serve"
+            },
+            {
+              "qty": "½ cup",
+              "name": "Shredded cheddar",
+              "group": "To serve"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salsa",
+              "group": "To serve"
+            },
+            {
+              "qty": "to taste",
+              "name": "Plain Greek yogurt",
+              "group": "To serve"
+            },
+            {
+              "qty": "1, in wedges",
+              "name": "Lime",
+              "group": "To serve"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Steak",
+              "text": "Rub the steak with seasoning, lime juice, 1 tbsp oil, and garlic. Let it sit at least 15 minutes (or all day in the fridge).",
+              "minutes": 15
+            },
+            {
+              "group": "Steak",
+              "text": "Heat a cast-iron skillet over high until it just smokes. Sear the steak without moving it, then flip.",
+              "minutes": 8
+            },
+            {
+              "group": "Steak",
+              "text": "Pull it at 130°F for medium. Rest on a board.",
+              "minutes": 8
+            },
+            {
+              "group": "Peppers and onions",
+              "text": "In the same skillet, add the remaining oil, peppers, and onion. Cook over high, tossing, until charred at the edges but still crisp.",
+              "minutes": 7
+            },
+            {
+              "group": "Serve",
+              "text": "Warm the tortillas. Slice the steak thinly against the grain."
+            },
+            {
+              "group": "Serve",
+              "text": "Fill tortillas with steak and peppers, then top with cheddar, salsa, Greek yogurt, and a squeeze of lime."
+            }
+          ],
+          "tips": [
+            "Slicing against the grain is what keeps flank steak tender. Look for the lines in the meat and cut across them."
+          ]
+        },
+        "startCookingNote": "Season the steak as soon as you're home; cooking takes about 20 minutes."
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "lunch": {
+        "title": "Protein snack boxes",
+        "items": [
+          "Turkey and cheese roll-ups",
+          "2 hard-boiled eggs",
+          "Hummus and snap peas"
+        ],
+        "proteinG": "~45g",
+        "groceries": [],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 5,
+          "ingredients": [
+            {
+              "qty": "8 oz",
+              "name": "Deli turkey"
+            },
+            {
+              "qty": "4",
+              "name": "Pepper jack or Colby jack slices"
+            },
+            {
+              "qty": "4",
+              "name": "Hard-boiled eggs"
+            },
+            {
+              "qty": "2",
+              "name": "Hummus cups"
+            },
+            {
+              "qty": "a couple handfuls",
+              "name": "Snap peas"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Roll 2 slices of turkey around each slice of cheese (2 roll-ups per person)."
+            },
+            {
+              "text": "Add 2 eggs each, seasoned with salt and pepper."
+            },
+            {
+              "text": "Pack a hummus cup and snap peas for dipping."
+            }
+          ]
+        }
+      },
+      "dinner": {
+        "title": "Baked ziti",
+        "items": [
+          "Lean beef marinara",
+          "Creamy cottage cheese and mozzarella"
+        ],
+        "proteinG": "~50g",
+        "groceries": [
+          {
+            "id": "ground-beef-ziti",
+            "name": "93% lean ground beef",
+            "qty": "1 lb",
+            "note": "Freeze when home"
+          },
+          {
+            "id": "penne",
+            "name": "Protein penne or ziti",
+            "qty": "1 box"
+          },
+          {
+            "id": "cottage-cheese",
+            "name": "Cottage cheese",
+            "qty": "16 oz"
+          },
+          {
+            "id": "ziti-have",
+            "name": "Marinara, mozzarella, parmesan, garlic",
+            "have": true
+          }
+        ],
+        "fromFreezer": [
+          "Ground beef (1 lb)"
+        ],
+        "prepTonight": [
+          "Portion the leftover ziti into 2 containers for Saturday and Sunday lunch.",
+          "Move the chuck roast from the freezer to the fridge for Sunday."
+        ],
+        "recipe": {
+          "servings": 4,
+          "prepMinutes": 15,
+          "cookMinutes": 30,
+          "ingredients": [
+            {
+              "qty": "8 oz",
+              "name": "Protein penne or ziti",
+              "group": "Pasta"
+            },
+            {
+              "qty": "1 lb",
+              "name": "93% lean ground beef",
+              "group": "Meat sauce"
+            },
+            {
+              "qty": "3 cloves, minced",
+              "name": "Garlic",
+              "group": "Meat sauce"
+            },
+            {
+              "qty": "1 tsp",
+              "name": "Italian seasoning",
+              "group": "Meat sauce"
+            },
+            {
+              "qty": "1 jar (24 oz)",
+              "name": "Marinara",
+              "group": "Meat sauce"
+            },
+            {
+              "qty": "16 oz",
+              "name": "Cottage cheese",
+              "group": "Cheese"
+            },
+            {
+              "qty": "¼ cup",
+              "name": "Grated parmesan",
+              "group": "Cheese"
+            },
+            {
+              "qty": "1½ cups",
+              "name": "Shredded mozzarella",
+              "group": "Cheese"
+            },
+            {
+              "qty": "to taste",
+              "name": "Salt and pepper",
+              "group": "Cheese"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Pasta",
+              "text": "Heat the oven to 400°F. Boil the pasta for 2 minutes less than the box says, then drain.",
+              "minutes": 9
+            },
+            {
+              "group": "Meat sauce",
+              "text": "Brown the beef in a large oven-safe skillet or pot over medium-high, breaking it up. Add the garlic and Italian seasoning for the last minute.",
+              "minutes": 8
+            },
+            {
+              "group": "Meat sauce",
+              "text": "Stir in the marinara and the drained pasta."
+            },
+            {
+              "group": "Cheese",
+              "text": "Stir the cottage cheese, parmesan, and half the mozzarella together. Dollop it over the pasta and swirl it in gently."
+            },
+            {
+              "group": "Bake",
+              "text": "Top with the remaining mozzarella and bake until bubbling and browned on top.",
+              "minutes": 18
+            },
+            {
+              "group": "Serve",
+              "text": "Rest 5 minutes, then scoop. Put 2 portions in containers for Saturday and Sunday lunch.",
+              "minutes": 5
+            }
+          ],
+          "tips": [
+            "Cottage cheese melts into a creamy, ricotta-like layer and adds about 14g of protein per serving."
+          ]
+        },
+        "startCookingNote": "About 45 minutes start to finish. It makes 4, so 2 portions are this weekend's lunches."
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "lunch": {
+        "title": "Leftover baked ziti",
+        "items": [
+          "Reheated from Friday"
+        ],
+        "proteinG": "~50g",
+        "groceries": [],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 0,
+          "cookMinutes": 3,
+          "ingredients": [
+            {
+              "qty": "2 portions",
+              "name": "Leftover baked ziti",
+              "note": "from Friday"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Add a splash of water, cover loosely, and microwave until hot, stirring halfway.",
+              "minutes": 3
+            }
+          ]
+        }
+      },
+      "dinner": {
+        "title": "Chicken enchiladas",
+        "items": [
+          "Black beans",
+          "Red enchilada sauce",
+          "Cheddar",
+          "Salsa and Greek yogurt"
+        ],
+        "proteinG": "~65g",
+        "groceries": [
+          {
+            "id": "chicken-enchiladas",
+            "name": "Boneless skinless chicken breasts",
+            "qty": "1.25 lb",
+            "note": "Freeze when home"
+          },
+          {
+            "id": "enchilada-sauce",
+            "name": "Red enchilada sauce",
+            "qty": "1 can (19 oz)"
+          },
+          {
+            "id": "black-beans",
+            "name": "Black beans",
+            "qty": "1 can"
+          },
+          {
+            "id": "cumin",
+            "name": "Cumin",
+            "note": "Check pantry"
+          },
+          {
+            "id": "enchiladas-have",
+            "name": "Tortillas, onion, cheddar, salsa, Greek yogurt",
+            "have": true
+          }
+        ],
+        "fromFreezer": [
+          "Chicken breasts (1.25 lb)"
+        ],
+        "prepTonight": [
+          "Sunday's pot roast needs about 3½ hours in the oven. Plan to start it by 1:30."
+        ],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 15,
+          "cookMinutes": 35,
+          "ingredients": [
+            {
+              "qty": "1.25 lb",
+              "name": "Chicken breasts",
+              "group": "Filling"
+            },
+            {
+              "qty": "1 can (19 oz)",
+              "name": "Red enchilada sauce",
+              "group": "Filling"
+            },
+            {
+              "qty": "1 can, drained and rinsed",
+              "name": "Black beans",
+              "group": "Filling"
+            },
+            {
+              "qty": "½, diced",
+              "name": "Yellow onion",
+              "note": "use what's left from meatloaf",
+              "group": "Filling"
+            },
+            {
+              "qty": "1 tsp",
+              "name": "Cumin",
+              "group": "Filling"
+            },
+            {
+              "qty": "¼ cup",
+              "name": "Plain Greek yogurt",
+              "group": "Filling"
+            },
+            {
+              "qty": "1½ cups",
+              "name": "Shredded cheddar",
+              "group": "Filling"
+            },
+            {
+              "qty": "8",
+              "name": "Fajita-size tortillas",
+              "group": "Assemble"
+            },
+            {
+              "qty": "for topping",
+              "name": "Salsa and Greek yogurt",
+              "group": "To serve"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Filling",
+              "text": "Put the chicken in a saucepan, cover with water, bring to a simmer, and cook until 165°F inside.",
+              "minutes": 15
+            },
+            {
+              "group": "Filling",
+              "text": "Heat the oven to 375°F. Shred the chicken with two forks."
+            },
+            {
+              "group": "Filling",
+              "text": "Mix the chicken with the beans, onion, cumin, Greek yogurt, ½ cup enchilada sauce, and 1 cup cheddar."
+            },
+            {
+              "group": "Assemble",
+              "text": "Spread ½ cup sauce in a 9 × 13 dish. Roll the filling into the tortillas and line them up seam side down."
+            },
+            {
+              "group": "Bake",
+              "text": "Pour the rest of the sauce over the top and sprinkle with the remaining cheddar. Bake until bubbling.",
+              "minutes": 20
+            },
+            {
+              "group": "Serve",
+              "text": "Top with salsa and a spoonful of Greek yogurt."
+            }
+          ],
+          "tips": [
+            "Short on time? Use the leftover grilled chicken strips if any are left from the Caesar wraps."
+          ]
+        },
+        "startCookingNote": "Simmer and shred the chicken first (15 minutes), then assemble and bake for 20."
+      }
+    },
+    {
+      "date": "2026-11-15",
+      "lunch": {
+        "title": "Leftover baked ziti",
+        "items": [
+          "Reheated from Friday"
+        ],
+        "proteinG": "~50g",
+        "groceries": [],
+        "recipe": {
+          "servings": 2,
+          "prepMinutes": 0,
+          "cookMinutes": 3,
+          "ingredients": [
+            {
+              "qty": "2 portions",
+              "name": "Leftover baked ziti",
+              "note": "from Friday"
+            }
+          ],
+          "steps": [
+            {
+              "text": "Add a splash of water, cover loosely, and microwave until hot, stirring halfway.",
+              "minutes": 3
+            }
+          ]
+        }
+      },
+      "dinner": {
+        "title": "Sunday pot roast",
+        "items": [
+          "Potatoes and carrots",
+          "Pan juices"
+        ],
+        "proteinG": "~55g",
+        "groceries": [
+          {
+            "id": "chuck-roast",
+            "name": "Chuck roast",
+            "qty": "3 lb",
+            "note": "Freeze when home; move to the fridge Friday night"
+          },
+          {
+            "id": "carrots",
+            "name": "Carrots",
+            "qty": "1 lb"
+          },
+          {
+            "id": "beef-broth",
+            "name": "Beef broth",
+            "qty": "32 oz carton"
+          },
+          {
+            "id": "tomato-paste",
+            "name": "Tomato paste",
+            "qty": "1 small can"
+          },
+          {
+            "id": "thyme",
+            "name": "Dried thyme",
+            "note": "Check pantry"
+          },
+          {
+            "id": "pot-roast-have",
+            "name": "Yukon potatoes, onion, garlic, Worcestershire",
+            "have": true
+          }
+        ],
+        "fromFreezer": [],
+        "prepTonight": [],
+        "recipe": {
+          "servings": 4,
+          "prepMinutes": 20,
+          "cookMinutes": 210,
+          "ingredients": [
+            {
+              "qty": "3 lb",
+              "name": "Chuck roast",
+              "note": "thawed and patted dry",
+              "group": "Roast"
+            },
+            {
+              "qty": "2 tsp",
+              "name": "Salt",
+              "group": "Roast"
+            },
+            {
+              "qty": "1 tsp",
+              "name": "Pepper",
+              "group": "Roast"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Olive oil",
+              "group": "Roast"
+            },
+            {
+              "qty": "1, in wedges",
+              "name": "Yellow onion",
+              "group": "Roast"
+            },
+            {
+              "qty": "4 cloves, smashed",
+              "name": "Garlic",
+              "group": "Roast"
+            },
+            {
+              "qty": "2 tbsp",
+              "name": "Tomato paste",
+              "group": "Roast"
+            },
+            {
+              "qty": "2 cups",
+              "name": "Beef broth",
+              "group": "Roast"
+            },
+            {
+              "qty": "1 tbsp",
+              "name": "Worcestershire sauce",
+              "group": "Roast"
+            },
+            {
+              "qty": "1 tsp",
+              "name": "Dried thyme",
+              "group": "Roast"
+            },
+            {
+              "qty": "1.5 lb, halved",
+              "name": "Yukon gold potatoes",
+              "group": "Vegetables"
+            },
+            {
+              "qty": "1 lb, in 2-inch pieces",
+              "name": "Carrots",
+              "group": "Vegetables"
+            }
+          ],
+          "steps": [
+            {
+              "group": "Start",
+              "text": "Heat the oven to 300°F. Season the roast all over with salt and pepper."
+            },
+            {
+              "group": "Roast",
+              "text": "Heat the oil in a Dutch oven over medium-high and sear the roast until deeply browned on all sides. Move it to a plate.",
+              "minutes": 10
+            },
+            {
+              "group": "Roast",
+              "text": "Add the onion and garlic and cook until they pick up color. Stir in the tomato paste for 1 minute.",
+              "minutes": 4
+            },
+            {
+              "group": "Roast",
+              "text": "Pour in the broth and Worcestershire, scraping up the browned bits. Add the thyme and return the roast."
+            },
+            {
+              "group": "Roast",
+              "text": "Cover and braise in the oven.",
+              "minutes": 150
+            },
+            {
+              "group": "Vegetables",
+              "text": "Tuck the potatoes and carrots around the roast, cover, and keep braising until the meat pulls apart with a fork.",
+              "minutes": 60
+            },
+            {
+              "group": "Serve",
+              "text": "Shred or slice the beef and serve with the vegetables and plenty of the cooking juices."
+            }
+          ],
+          "tips": [
+            "Start by 1:30 for dinner at 5.",
+            "Slow cooker instead: sear, then cook everything on low 8 hours (vegetables in from the start).",
+            "Leftovers make Monday's lunch or a quick pot roast sandwich."
+          ]
+        },
+        "startCookingNote": "This one starts early afternoon: get it in the oven by 1:30."
+      }
+    }
+  ],
+  "extras": []
+}
