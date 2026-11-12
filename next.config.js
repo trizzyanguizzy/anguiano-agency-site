@@ -14,6 +14,12 @@ const nextConfig = {
     return [
       { source: '/meals', destination: '/family/meals', permanent: false },
       { source: '/meals/:path*', destination: '/family/meals/:path*', permanent: false },
+      // The portfolio pages are gone while the site is under construction.
+      ...['/about', '/experience', '/skills', '/projects', '/contact'].map((source) => ({
+        source,
+        destination: '/',
+        permanent: false,
+      })),
     ];
   },
 };
