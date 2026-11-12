@@ -1,0 +1,123 @@
+.page {
+  --concrete: #e4e2dc;
+  --ink: #1d1d1b;
+  --sign-orange: #f7931e;
+  --post: #8a8d91;
+  --lamp: #ffb320;
+
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 2.25rem;
+  padding: 2rem 1rem;
+  background: var(--concrete);
+  color: var(--ink);
+}
+
+.scene {
+  width: min(78vw, 22rem);
+  height: auto;
+  overflow: visible;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 1.4rem + 3vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--ink);
+}
+
+/* Sign */
+.post,
+.leg {
+  fill: var(--post);
+}
+.signFace {
+  fill: var(--sign-orange);
+}
+.signBorder {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 6;
+}
+.ink {
+  fill: var(--ink);
+  stroke: var(--ink);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ink circle {
+  stroke: none;
+}
+
+/* Barricade */
+.boardWhite {
+  fill: #fbfaf7;
+}
+.stripes {
+  fill: var(--sign-orange);
+}
+.lamp {
+  fill: var(--lamp);
+}
+
+/* Motion: the sign settles in once, then the worker keeps digging and the lamps blink. */
+.sign {
+  transform-box: view-box;
+  transform-origin: 160px 230px;
+  animation: settle 1.6s cubic-bezier(0.3, 1.4, 0.5, 1) both;
+}
+.shovel {
+  transform-box: view-box;
+  transform-origin: 150px 88px;
+  animation: dig 1.4s ease-in-out 1.2s infinite;
+}
+.lampA {
+  animation: blink 1.2s steps(1, end) infinite;
+}
+.lampB {
+  animation: blink 1.2s steps(1, end) 0.6s infinite;
+}
+
+@keyframes settle {
+  0% {
+    transform: rotate(-9deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes dig {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(14deg);
+  }
+  60% {
+    transform: rotate(14deg);
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(255, 179, 32, 0.9));
+  }
+  50% {
+    opacity: 0.25;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sign,
+  .shovel,
+  .lampA,
+  .lampB {
+    animation: none;
+  }
+}
